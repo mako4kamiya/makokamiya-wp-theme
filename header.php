@@ -25,28 +25,28 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'makokamiya-wp-theme' ); ?></a>
 
+	<div class="flame pc-only">
+        <div class="frame_Right"></div>
+        <hr class="right">
+        <div class="frame_Left"></div>
+        <hr class="left">
+        <hr class="bottom">
+    </div>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$makokamiya_wp_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $makokamiya_wp_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $makokamiya_wp_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			<?php if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></h1>
+			<?php else :?>
+				<p class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></p>
+			<?php endif; ?>				
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'makokamiya-wp-theme' ); ?></button>
+			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> -->
+				<?php 
+					// esc_html_e( 'Primary Menu', 'makokamiya-wp-theme' );
+				?>
+			<!-- </button> -->
 			<?php
 			wp_nav_menu(
 				array(
@@ -56,4 +56,12 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<div id="MenuButton" class="sp-only menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<?php
+				// esc_html_e( 'Primary Menu', 'makokamiya-wp-theme' );
+			?>
+            <img class="menu" src="images/icon/button_menu_dark.png" alt="" srcset="">
+            <img class="close" src="images/icon/button_close_dark.png" alt="" srcset="">
+        </div>
+        <hr class="top pc-only">
 	</header><!-- #masthead -->

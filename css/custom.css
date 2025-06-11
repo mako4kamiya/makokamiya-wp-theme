@@ -169,23 +169,18 @@ header {
             color: var(--text-secondary-gray);
         }
     }
-    nav ul {
-        display: flex;
-        gap: 1rem;
-        padding: 0 16px;
-        align-items: center;
-        justify-content: center;
-        li{
-            color: var(--text-secondary-gray);
-            /* Oln-16B-100-en */
-            font-optical-sizing: auto;
-            font-weight: bold;
-            font-style: normal;
-            font-size: 1rem; /* 16px */
-            line-height: 1;
-            letter-spacing: 0.02em;
-            a {
-                color: var(--text-primary-dark);
+    nav {
+        &#site-navigation {
+            width: auto;
+        }
+        ul {
+            display: flex;
+            gap: 1rem;
+            padding: 0 16px;
+            align-items: center;
+            justify-content: center;
+            li {
+                color: var(--text-secondary-gray);
                 /* Oln-16B-100-en */
                 font-optical-sizing: auto;
                 font-weight: bold;
@@ -193,15 +188,29 @@ header {
                 font-size: 1rem; /* 16px */
                 line-height: 1;
                 letter-spacing: 0.02em;
-                img {
-                    width: 12px;
+                &.menu-icon-x > a {
+                    background-image: url("../images/x-logo-black.png");
+                    background-repeat: no-repeat;
+                    background-size: 16px;
+                    width: 16px;
+                    height: 16px;
                     &:hover {
                         transform: scale(1.2);
                         transition: transform 0.2s ease-in-out;
                     }
                 }
-                &:hover {
-                    color: var(--text-secondary-gray);
+                a {
+                    color: var(--text-primary-dark);
+                    /* Oln-16B-100-en */
+                    font-optical-sizing: auto;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-size: 1rem; /* 16px */
+                    line-height: 1;
+                    letter-spacing: 0.02em;
+                    &:hover {
+                        color: var(--text-secondary-gray);
+                    }
                 }
             }
         }
