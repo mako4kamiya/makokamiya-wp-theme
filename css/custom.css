@@ -94,7 +94,7 @@ a.url {
         margin: unset;
         position: fixed;
         z-index: 3;
-        border: 0.5px solid var(--ui-border);
+        background-color: var(--ui-border);
         &.top {
             top: 56px;
             right: 0;
@@ -228,7 +228,7 @@ header {
         margin: unset;
         position: fixed;
         z-index: 3;
-        border: 0.5px solid var(--ui-border);
+        background-color: var(--ui-border);
         top: 56px;
         right: 0;
         left: 0;
