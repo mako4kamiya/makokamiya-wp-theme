@@ -89,52 +89,46 @@ a.url {
     display: none!important;
 }
 
-.flame {
-    hr {
-        margin: unset;
+.flames {
+    .frame {
+        width: 56px;
+        height: calc(100vh);
+        background-color: var(--bg-overlay-light);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        &.right {
+            right: 0;
+        }
+        &.left {
+            left: 0;
+        }
+    }
+    .line {
+        border: 0.5px solid var(--ui-border);
         position: fixed;
         z-index: 3;
-        background-color: var(--ui-border);
         &.top {
             top: 56px;
             right: 0;
             left: 0;
         }
         &.right {
-            top: 0;
             right: 56px;
+            top: 0;
             bottom: 0;
         }
         &.left {
-            top: 0;
             left: 56px;
+            top: 0;
             bottom: 0;
         }
         &.bottom {
+            bottom: 56px;
             right: 0;
             left: 0;
-            bottom: 56px;
         }
-    }
-    .frame_Right {
-        width: 56px;
-        height: calc(100vh);
-        background-color: var(--bg-overlay-light);
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 2;
-    }
-    .frame_Left {
-        width: 56px;
-        height: calc(100vh);
-        background-color: var(--bg-overlay-light);
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 2;
     }
 }
 header {
@@ -223,15 +217,6 @@ header {
             margin-right: 1rem;
             cursor: pointer;
         }
-    }
-    hr.top {
-        margin: unset;
-        position: fixed;
-        z-index: 3;
-        background-color: var(--ui-border);
-        top: 56px;
-        right: 0;
-        left: 0;
     }
 }
 .pankuzu {

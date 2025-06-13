@@ -1,15 +1,3 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Mako_Kamiya_WP_Theme
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -25,12 +13,13 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'makokamiya-wp-theme' ); ?></a>
 
-	<div class="flame pc-only">
-        <div class="frame_Right"></div>
-        <hr class="right">
-        <div class="frame_Left"></div>
-        <hr class="left">
-        <hr class="bottom">
+	<div class="flames pc-only">
+        <div class="frame right"></div>
+        <div class="frame Left"></div>
+		<div class="line top"></div>
+		<div class="line right"></div>
+		<div class="line left"></div>
+        <div class="line bottom"></div>
     </div>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -63,5 +52,4 @@
             <img class="menu" src="images/icon/button_menu_dark.png" alt="" srcset="">
             <img class="close" src="images/icon/button_close_dark.png" alt="" srcset="">
         </div>
-        <hr class="top pc-only">
 	</header><!-- #masthead -->
