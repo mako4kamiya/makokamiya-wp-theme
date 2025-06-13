@@ -153,6 +153,57 @@ function makokamiya_wp_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'makokamiya_wp_theme_scripts' );
 
 /**
+ * カスタム投稿タイプ「works」を追加
+ */
+function makokamiya_register_post_type_works() {
+    register_post_type(
+        'works',
+        array(
+            'label' => 'WORKS', // 管理画面メニューなどに表示される投稿タイプの名前
+            'public' => true, // サイト上・管理画面の両方で公開（trueで一般公開、falseで非公開）
+            'has_archive' => true, // 一覧ページ（アーカイブ）を自動生成（例: /works/ で一覧表示）
+            'menu_position' => 5, // 管理画面メニューの表示位置（数字が小さいほど上に表示）
+            'menu_icon' => 'dashicons-portfolio', // 管理画面メニューで使うアイコン（WordPress標準アイコン）
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ), // 投稿画面で使える機能（タイトル、本文、アイキャッチ画像、抜粋）
+            'show_in_rest' => true, // ブロックエディタ（Gutenberg）やREST APIに対応
+        )
+    );
+}
+add_action( 'init', 'makokamiya_register_post_type_works' );
+
+/**
+ * カスタムタクソノミー「works_tag」を追加
+ */
+function makokamiya_register_taxonomy_works_tag() {
+    register_taxonomy(
+        'works_tag',
+        'works',
+        array(
+            'label' => 'タグ',
+            'hierarchical' => false, // trueにするとカテゴリー型、falseでタグ型
+            'show_in_rest' => true, // ブロックエディタ対応
+        )
+    );
+}
+add_action( 'init', 'makokamiya_register_taxonomy_works_tag' );
+
+/**
+ * カスタムタクソノミー「works_tag」を追加
+ */
+function makokamiya_register_taxonomy_role() {
+    register_taxonomy(
+        'works_role', 
+        'works',
+        array(
+            'label' => '役割',
+            'hierarchical' => false, // trueにするとカテゴリー型、falseでタグ型
+            'show_in_rest' => true, // ブロックエディタ対応
+        )
+    );
+}
+add_action( 'init', 'makokamiya_register_taxonomy_role' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -179,3 +230,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * ダミーデータ
+ */
+// add_action('init', function() {
+//     if ( !get_option('works_test_data_inserted') ) {
+//         for ($i = 1; $i <= 5; $i++) {
+//             $post_id = wp_insert_post(array(
+//                 'post_title'   => "テスト作品{$i}",
+//                 'post_type'    => 'works',
+//                 'post_status'  => 'publish',
+//                 'post_content' => "これはテスト作品{$i}の説明です。",
+//             ));
+//             // タグや役割（タクソノミー）があれば追加
+//             if ($post_id && !is_wp_error($post_id)) {
+//                 wp_set_object_terms($post_id, array('test-tag'), 'works_tag');
+//                 wp_set_object_terms($post_id, array('test-role'), 'works_role');
+//                 set_post_thumbnail($post_id, 25);
+//             }
+//         }
+//         update_option('works_test_data_inserted', 1);
+//     }
+// });
+
+/**
+ * ダミーデータ投入フラグをリセット（1回だけ実行）
+ */
+// delete_option('works_test_data_inserted');

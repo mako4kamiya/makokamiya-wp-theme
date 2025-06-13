@@ -1,59 +1,47 @@
 <?php get_header(); ?>
 
 <main id="Home">
+	<?php
+	$works_query = new WP_Query( array(
+        'post_type'      => 'works',
+        'posts_per_page' => 5, // 取得する件数
+    ) );
+	if ( $works_query->have_posts() ) : ?>
 	<div class="swiper">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="../images/sample.png" alt="画像1">
+			<?php while ( $works_query->have_posts() ) : $works_query->the_post(); ?>
+			<div id="<?php echo esc_attr( get_the_ID() ); ?>" class="swiper-slide">
+				<?php if ( has_post_thumbnail() ) : ?>
+					<?php the_post_thumbnail('large'); ?>
+                <?php endif; ?>
 				<div class="caption">
 					<div class="tags">
-						<span class="tag">#website</span>
-						<span class="tag">#original</span>
+						<?php $tags = get_the_terms( get_the_ID(), 'works_tag' ); ?>
+						<?php if ( $tags && ! is_wp_error( $tags ) ) : ?>
+							<?php foreach ( $tags as $tag ) : ?>
+								<span class="tag">#<?php echo esc_html( $tag->name ); ?></span>
+							<?php endforeach; ?>
+						<?php endif; ?>
 					</div>
-					<p class="title">ポートフォリオサイト</p>
-					<p class="role">Planning / Design /  Coding / WordPress</p>
+					<p class="title"><?php the_title(); ?></p>
+					<?php $roles = get_the_terms( get_the_ID(), 'works_role' ); ?>
+					<?php if ( $roles && ! is_wp_error( $roles ) ) : ?>
+						<p class="role">
+							<?php
+								$role_slugs = wp_list_pluck( $roles, 'slug' );
+								echo esc_html( implode(' / ', $role_slugs) );
+							?>
+						</p>
+					<?php endif; ?>
 				</div>
-				<a href="portfolio.html"></a>
+				<a href="<?php the_permalink(); ?>"></a>
 			</div>
-			<div class="swiper-slide">
-				<img src="../images/sample.png" alt="画像2">
-				<div class="caption">
-					<div class="tags">
-						<span>#website</span>
-						<span>#original</span>
-					</div>
-					<p class="title">ポートフォリオサイト</p>
-					<p class="role">Planning / Design /  Coding / WordPress</p>
-				</div>
-				<a href="portfolio.html"></a>
-			</div>
-			<div class="swiper-slide">
-				<img src="../images/sample.png" alt="画像3">
-				<div class="caption">
-					<div class="tags">
-						<span>#website</span>
-						<span>#original</span>
-					</div>
-					<p class="title">ポートフォリオサイト</p>
-					<p class="role">Planning / Design /  Coding / WordPress</p>
-				</div>
-				<a href="portfolio.html"></a>
-			</div>
-			<div class="swiper-slide">
-				<img src="../images/sample.png" alt="画像4">
-				<div class="caption">
-					<div class="tags">
-						<span>#website</span>
-						<span>#original</span>
-					</div>
-					<p class="title">ポートフォリオサイト</p>
-					<p class="role">Planning / Design /  Coding / WordPress</p>
-				</div>
-				<a href="portfolio.html"></a>
-			</div>
+			<?php endwhile; ?>
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
+	<?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 </main>
 
 <?php get_footer();
