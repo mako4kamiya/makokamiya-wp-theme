@@ -168,7 +168,7 @@ header {
             width: auto;
         }
         ul {
-            display: flex;
+            display: flex !important;
             gap: 1rem;
             padding: 0 16px;
             align-items: center;
@@ -505,23 +505,59 @@ footer {
     }
     header {
         padding: unset;
-        nav {
+        .site-branding {
+            z-index: 1;
+        }
+        button {
+            margin-right: 1rem;
+            z-index: 1;
+            position: relative;
+            border: unset;
+            background: unset;
+            color: unset;
+            line-height: unset;
+            padding: unset;
+            background-image: url("../images/button_menu_dark.png");
+            background-repeat: no-repeat;
+            background-size: 44px;
+            width: 44px;
+            height: 44px;
+        }
+        nav.main-navigation {
+            .menu-menu-container {
+                position: absolute;
+                top: 0px;
+                right: 0;
+                left: 0;
+                transform: translateY(-100%);
+                transform: translateY(calc(-100% + 56px));
+                transition: transform 0.3s ease-in-out;
+                padding-bottom: 56px;
+                border-bottom: 0.5px solid var(--ui-border);
+                background-color: var(--bg-overlay-light);
+                ul {
+                    flex-direction: column;
+                    gap: 2rem;
+                    padding: 1rem 0;
+                }
+            }
+            &.toggled {
+                button {
+                    background-image: url("../images/button_close_dark.png");
+                }
+                .menu-menu-container {
+                    transform: translateY(56px);
+                }
+            }
+        }
+        /* ul {
             z-index: -1;
             background-color: var(--bg-overlay-light);
-            position: absolute;
-            top: 0px;
-            right: 0;
-            left: 0;
             border-bottom: 1px solid var(--ui-border);
             transform: translateY(calc(-100% + 56px));
             transition: transform 0.3s ease-in-out;
-            ul {
-                flex-direction: column;
-                gap: 2rem;
-                padding: 1rem 0;
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-            }
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
             &[data-isopen="true"] {
                 transform: translateY(56px);
                 ul {
@@ -538,8 +574,8 @@ footer {
                     }
                 }
             }
-        }
-        #MenuButton {
+        } */
+        /* #MenuButton {
             display: block;
             img {
                 &.menu {
@@ -549,7 +585,7 @@ footer {
                 }
             }
 
-        }
+        } */
     }
     main {
         height: auto;

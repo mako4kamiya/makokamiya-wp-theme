@@ -31,11 +31,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"> -->
-				<?php 
-					// esc_html_e( 'Primary Menu', 'makokamiya-wp-theme' );
-				?>
-			<!-- </button> -->
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -45,11 +41,4 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<div id="MenuButton" class="sp-only menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<?php
-				// esc_html_e( 'Primary Menu', 'makokamiya-wp-theme' );
-			?>
-            <img class="menu" src="images/icon/button_menu_dark.png" alt="" srcset="">
-            <img class="close" src="images/icon/button_close_dark.png" alt="" srcset="">
-        </div>
 	</header><!-- #masthead -->
