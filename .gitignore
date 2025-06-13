@@ -57,11 +57,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# ComposerやNode.jsの依存
-/vendor/
-/composer.lock
-node_modules/
-
 # 一時ファイル
 *.bak
 *.swp
