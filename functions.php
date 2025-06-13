@@ -141,8 +141,23 @@ function makokamiya_wp_theme_scripts() {
 	wp_enqueue_style( 'makokamiya-wp-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'makokamiya-wp-theme-style', 'rtl', 'replace' );
 
-    // custom.css を追加
+    // swiper style
+	wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0' );
+	
+	// Swiper JS
+	wp_enqueue_script( 'swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true );
+
+    // custom.css
     wp_enqueue_style( 'makokamiya-wp-theme-custom', get_template_directory_uri() . '/css/custom.css', array(), _S_VERSION );
+
+	// custom.js
+    wp_enqueue_script(
+        'makokamiya-custom-js',
+        get_template_directory_uri() . '/js/custom.js',
+        array(), // 依存ファイルがあればここに
+        _S_VERSION,
+        true // フッターで読み込む場合はtrue
+    );
 
 	wp_enqueue_script( 'makokamiya-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
