@@ -174,7 +174,7 @@ function makokamiya_register_post_type_works() {
     register_post_type(
         'works',
         array(
-            'label' => 'WORKS', // 管理画面メニューなどに表示される投稿タイプの名前
+            'label' => 'Works', // 管理画面メニューなどに表示される投稿タイプの名前
             'public' => true, // サイト上・管理画面の両方で公開（trueで一般公開、falseで非公開）
             'has_archive' => true, // 一覧ページ（アーカイブ）を自動生成（例: /works/ で一覧表示）
             'menu_position' => 5, // 管理画面メニューの表示位置（数字が小さいほど上に表示）
@@ -196,6 +196,7 @@ function makokamiya_register_taxonomy_works_tag() {
         array(
             'label' => 'タグ',
             'hierarchical' => false, // trueにするとカテゴリー型、falseでタグ型
+			'rewrite' => array('slug' => 'works-tag'), // URLスラグ
             'show_in_rest' => true, // ブロックエディタ対応
         )
     );
@@ -203,20 +204,163 @@ function makokamiya_register_taxonomy_works_tag() {
 add_action( 'init', 'makokamiya_register_taxonomy_works_tag' );
 
 /**
- * カスタムタクソノミー「works_tag」を追加
+ * カスタムタクソノミー「works_role」を追加
  */
-function makokamiya_register_taxonomy_role() {
+function makokamiya_register_taxonomy_works_role() {
     register_taxonomy(
         'works_role', 
         'works',
         array(
             'label' => '役割',
             'hierarchical' => false, // trueにするとカテゴリー型、falseでタグ型
+			'rewrite' => array('slug' => 'role'), // URLスラグ
             'show_in_rest' => true, // ブロックエディタ対応
         )
     );
 }
-add_action( 'init', 'makokamiya_register_taxonomy_role' );
+add_action( 'init', 'makokamiya_register_taxonomy_works_role' );
+
+/**
+ * カスタムタクソノミー「tool」を追加
+ */
+function makokamiya_register_taxonomy_works_tool() {
+	register_taxonomy(
+		'works_tool',
+		'works',
+		array(
+			'label' => 'ツール',
+			'hierarchical' => false, // タグ形式（非階層）
+			'rewrite' => array('slug' => 'tool'), // URLスラグ
+			'show_in_rest' => true, // Gutenberg対応
+		)
+	);
+}
+add_action('init', 'makokamiya_register_taxonomy_works_tool');
+
+/**
+ * カスタムタフィールド「URL」「制作時間」「要約文」を追加
+ */
+function register_custom_fields_for_rest() {
+	// 「URL」の登録
+    register_post_meta(
+        'works', // 対象投稿タイプ
+        'url', // メタキー
+        array(
+            'description' => '関連URL', // 説明
+            'single' => true, // 単一値
+            'type' => 'string', // データ型
+            'show_in_rest' => true, // Gutenbergで表示
+        )
+    );
+
+    // 「制作時間」の登録
+    register_post_meta(
+        'works', // 対象投稿タイプ
+        'production_time', // メタキー
+        array(
+            'description' => '制作時間', // 説明
+            'single' => true, // 単一値
+            'type' => 'string', // データ型
+            'show_in_rest' => true, // Gutenbergで表示
+        )
+    );
+
+    // 「要約文」の登録
+    register_post_meta(
+        'works',
+        'summary',
+        array(
+            'description' => '作品の要約文',
+            'single' => true,
+            'type' => 'string',
+            'show_in_rest' => true,
+        )
+    );
+}
+add_action('init', 'register_custom_fields_for_rest');
+
+/**
+ * カスタムメタボックス「作品情報（URL・制作時間・要約文）」を追加
+ */
+function add_works_custom_fields() {
+    add_meta_box(
+        'works_custom_fields', // メタボックスID
+        '作品情報', // タイトル
+        'render_works_custom_fields', // ← 修正：コールバック関数を指定
+        'works', // 対象投稿タイプ
+        'normal', // 表示位置
+        'default' // 優先度
+    );
+}
+add_action('add_meta_boxes', 'add_works_custom_fields');
+
+/**
+ * カスタムフィールドの表示
+ */
+function render_works_custom_fields($post) {
+    // セキュリティ用のnonceを追加
+    wp_nonce_field('works_custom_fields_nonce', 'works_custom_fields_nonce');
+
+    // 保存済みの値を取得
+    $production_time = get_post_meta($post->ID, 'production_time', true);
+    $summary = get_post_meta($post->ID, 'summary', true);
+    $url = get_post_meta($post->ID, 'url', true); // ← ここを追加
+    ?>
+    <table class="form-table">
+		<tr>
+            <th><label for="url">関連URL</label></th> 
+            <td>
+                <input type="url" id="url" name="url" value="<?php echo esc_url($url); ?>" />
+                <p class="description">作品の関連URLを入力してください。</p>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="production_time">制作時間</label></th>
+            <td>
+                <input type="text" id="production_time" name="production_time" value="<?php echo esc_attr($production_time); ?>" />
+                <p class="description">例: 30時間</p>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="summary">要約文</label></th>
+            <td>
+                <textarea id="summary" name="summary" rows="4" cols="50"><?php echo esc_textarea($summary); ?></textarea>
+                <p class="description">作品の簡単な説明を入力してください。</p>
+            </td>
+        </tr>
+    </table>
+    <?php
+}
+
+/**
+ * カスタムフィールドの保存処理
+ */
+function save_works_custom_fields($post_id) {
+    // リクエストの正当性を確認
+    if (!isset($_POST['works_custom_fields_nonce']) || !wp_verify_nonce($_POST['works_custom_fields_nonce'], 'works_custom_fields_nonce')) {
+        return;
+    }
+
+    // 自動保存時や不正なアクセスを除外
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+	// 「URL」の保存
+    if (isset($_POST['url'])) {
+        update_post_meta($post_id, 'url', sanitize_url($_POST['url']));
+    }
+
+    // 「制作時間」の保存
+    if (isset($_POST['production_time'])) {
+        update_post_meta($post_id, 'production_time', sanitize_text_field($_POST['production_time']));
+    }
+
+    // 「要約文」の保存
+    if (isset($_POST['summary'])) {
+        update_post_meta($post_id, 'summary', sanitize_textarea_field($_POST['summary']));
+    }
+}
+add_action('save_post', 'save_works_custom_fields');
 
 /**
  * Implement the Custom Header feature.

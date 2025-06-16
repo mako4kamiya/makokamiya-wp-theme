@@ -322,7 +322,8 @@ main#Home {
         }
     }
 }
-main#Portfolio {
+article {
+    display: flex;
     .left {
         width: 33.333%;
         .left-fixed {
@@ -350,7 +351,7 @@ main#Portfolio {
                                 padding: 3px 8px;
                             }
                         }
-                        p.title {
+                        h1.entry-title {
                             /* Std-32B-150-ja */
                             font-optical-sizing: auto;
                             font-weight: bold;
@@ -610,7 +611,7 @@ footer {
             }
         }
     }
-    main#Portfolio{
+    article {
         padding: calc(56px + 3rem) 0 0 0;
         flex-direction: column;
         gap: 3rem;
