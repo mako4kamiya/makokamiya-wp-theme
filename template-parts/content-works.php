@@ -91,62 +91,22 @@
 				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/default-thumbnail.png' ); ?>" alt="<?php the_title_attribute(); ?>" class="wp-post-image"/>
 			<?php endif; ?>
 			</section>
-			<section>
-				<img src="images/portfolioPages.png" alt="ImgPages">
-				<div class="text_field">
-					<h2>目的</h2>
-					<ul>
-						<li>Web制作の学習のアウトプット</li>
-						<li>就職や副業への活用</li>
-					</ul>
-				</div>
-				<div class="text_field">
-					<h2>ターゲット</h2>
-					<ul>
-						<li>採用をご検討いただいている方</li>
-						<li>Web制作に関心のある方</li>
-						<li>私の作品に興味を持ってくださった方</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<img src="images/portfolioImg1.png" alt="portfolioImg1">
-				<div class="text_field">
-					<h2>全体的なポイント</h2>
-					<p>
-						「優しさ」「親しみやすさ」「誠実さ」を意識し、シンプルなデザインにしました。<br>
-						色はモノクロを基調とし、作品が主役となるよう工夫しています。<br>
-						フォントは、英語部分に軽やかで視認性の高い「Work Sans」、日本語部分に安心感のある「Noto Sans JP」を使用しています。
-					</p>
-				</div>
-			</section>
-			<section>
-				<img src="images/portfolioImg1.png" alt="portfolioImg1">
-				<div class="text_field">
-					<h2>トップページについて</h2>
-					<p>
-						ファーストビューに作品のスクリーンショットを大きく配置し、作品を主役として見せる構成にしています。<br>
-						画面の周囲に幅16pxの薄いグレーの帯を設けることで、サイト全体に額縁のような印象を加え、ポートフォリオ全体を一つの展示物として見せることを意識しました。
-					</p>
-				</div>
-			</section>
-			<section>
-				<img src="images/portfolioImg2.png" alt="portfolioImg2">
-				<div class="text_field">
-					<h2>このページの構成について</h2>
-					<p>
-						左側に要点、右側に詳細を配置することで、読みやすく、情報情報を拾いやすいように工夫しました。
-					</p>
-				</div>
-				<div class="text_field">
-					<h2>今後の展望</h2>
-					<ul>
-						<li>作品の追加</li>
-						<li>タグによるソート機能の実装</li>
-						<li>ブログ機能の追加</li>
-					</ul>
-				</div>
-			</section>
+			<?php
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'makokamiya-wp-theme' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+			?>
 		</div>
 	</div>
 	<div class="pankuzu sp-only">
