@@ -183,7 +183,6 @@ header {
                 line-height: 1;
                 letter-spacing: 0.02em;
                 &.menu-icon-x > a {
-                    background-image: url("../images/x-logo-black.png");
                     background-repeat: no-repeat;
                     background-size: 16px;
                     width: 16px;

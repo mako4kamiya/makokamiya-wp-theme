@@ -159,6 +159,13 @@ function makokamiya_wp_theme_scripts() {
         true // フッターで読み込む場合はtrue
     );
 
+    $xlogo_url = get_template_directory_uri() . '/images/x-logo-black.png';
+    wp_add_inline_style( 'makokamiya-wp-theme-style', "
+        .menu-icon-x > a {
+            background-image: url('$xlogo_url');
+        }
+    " );
+
 	wp_enqueue_script( 'makokamiya-wp-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
