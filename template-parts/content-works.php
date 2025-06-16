@@ -8,7 +8,7 @@
 							<span class="tag">#website</span>
 							<span class="tag">#original</span>
 						</div>
-						<?php if (the_title()) : ?>
+						<?php if ( get_the_title() ) : ?>
 							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 						<?php else : ?>
 							<h1 class="entry-title">(タイトルなし)</h1>
@@ -46,11 +46,13 @@
 					<dl>
 						<dt>使用ツール</dt>
 						<dd class="pc-only">
-							Figma,<br>
-							HTML,<br>
-							CSS,<br>
-							JavaScript,<br>
-							WordPress
+							<?php $tools = get_the_terms( get_the_ID(), 'works_tools' ); ?>
+							<?php if ( $tools && ! is_wp_error( $tools ) ) : ?>
+								<?php
+									$tool_names = wp_list_pluck( $tools, 'name' );
+									echo esc_html( implode(', ', $tool_names) );
+								?>
+							<?php endif; ?>
 						</dd>
 						<dd class="sp-only">
 							Figma, HTML, CSS, JavaScript, WordPress
