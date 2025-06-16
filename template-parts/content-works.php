@@ -29,10 +29,15 @@
 					<dl>
 						<dt>担当範囲</dt>
 						<dd class="pc-only">
-							企画・構成<br>
-							デザイン<br>
-							コーディング<br>
-							WordPress実装
+							<?php $roles = get_the_terms( get_the_ID(), 'works_role' ); ?>
+							<?php if ( $roles && ! is_wp_error( $roles ) ) : ?>
+								<p class="role">
+									<?php
+										$role_names = wp_list_pluck( $roles, 'name' );
+										echo implode('<br>', array_map('esc_html', $role_names));
+									?>
+								</p>
+							<?php endif; ?>
 						</dd>
 						<dd class="sp-only">
 							企画・構成、デザイン、コーディング、WordPress実装
