@@ -240,10 +240,10 @@ header {
 main {
     height: 100vh;
     padding: 56px;
-    display: flex;
 }
 main#Home {
     padding: unset;
+    display: flex;
     align-items: center;
     .swiper {
         .swiper-slide {
@@ -435,6 +435,7 @@ article {
     }
 }
 main#About{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 14.5rem;
