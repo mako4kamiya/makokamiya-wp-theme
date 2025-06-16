@@ -78,7 +78,11 @@
 	<div class="right">
 		<div class="right-contents">
 			<section class="thumbnail pc-only">
+			<?php if ( has_post_thumbnail() ) : ?>
 				<?php the_post_thumbnail('large'); ?>
+			<?php else : ?>
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/default-thumbnail.png' ); ?>" alt="<?php the_title_attribute(); ?>" class="wp-post-image"/>
+			<?php endif; ?>
 			</section>
 			<section>
 				<img src="images/portfolioPages.png" alt="ImgPages">
