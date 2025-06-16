@@ -228,11 +228,11 @@ function makokamiya_register_taxonomy_works_role() {
 add_action( 'init', 'makokamiya_register_taxonomy_works_role' );
 
 /**
- * カスタムタクソノミー「tool」を追加
+ * カスタムタクソノミー「tools」を追加
  */
-function makokamiya_register_taxonomy_works_tool() {
+function makokamiya_register_taxonomy_works_tools() {
 	register_taxonomy(
-		'works_tool',
+		'works_tools',
 		'works',
 		array(
 			'label' => 'ツール',
@@ -242,7 +242,7 @@ function makokamiya_register_taxonomy_works_tool() {
 		)
 	);
 }
-add_action('init', 'makokamiya_register_taxonomy_works_tool');
+add_action('init', 'makokamiya_register_taxonomy_works_tools');
 
 /**
  * カスタムタフィールド「URL」「制作時間」「要約文」を追加
