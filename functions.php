@@ -159,10 +159,29 @@ function makokamiya_wp_theme_scripts() {
         true // フッターで読み込む場合はtrue
     );
 
-    $xlogo_url = get_template_directory_uri() . '/images/x-logo-black.png';
+    // cssに画像を登録
+    $xIcon_url = get_template_directory_uri() . '/images/icons/x_icon.png';
     wp_add_inline_style( 'makokamiya-wp-theme-style', "
         .menu-icon-x > a {
-            background-image: url('$xlogo_url');
+            background-image: url('$xIcon_url');
+        }
+    " );
+    
+    $menuIcon_url = get_template_directory_uri() . '/images/icons/menu_icon.png';
+    wp_add_inline_style( 'makokamiya-wp-theme-style', "
+        @media screen and (max-width: 768px) {
+            header button {
+                background-image: url('$menuIcon_url');
+            }
+        }
+    " );
+    
+    $closeIcon_url = get_template_directory_uri() . '/images/icons/close_icon.png';
+    wp_add_inline_style( 'makokamiya-wp-theme-style', "
+        @media screen and (max-width: 768px) {
+        header nav.main-navigation.toggled button {
+                background-image: url('$closeIcon_url');
+            }
         }
     " );
 
@@ -368,6 +387,66 @@ function save_works_custom_fields($post_id) {
     }
 }
 add_action('save_post', 'save_works_custom_fields');
+
+/**
+ * Register custom block patterns
+ */
+function makokamiya_register_block_patterns() {
+    // パターンカテゴリーを登録
+    register_block_pattern_category('makokamiya-patterns', array(
+        'label' => __('Mako Kamiya Patterns', 'makokamiya-wp-theme')
+    ));
+
+    // 作品紹介パターンを登録
+    register_block_pattern(
+        'makokamiya-wp-theme/works-intro',
+        array(
+            'title'       => __('Works Introduction', 'makokamiya-wp-theme'),
+            'description' => _x('A section to introduce works with image and description.', 'Block pattern description', 'makokamiya-wp-theme'),
+            'categories'  => array('makokamiya-patterns'),
+            'content'     => '
+                <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+                <section class="wp-block-group alignwide">
+                    <!-- wp:image {"sizeSlug":"large"} -->
+                    <figure class="wp-block-image size-large">
+                        <img src="images/portfolioImg2.png" alt="portfolioImg2"/>
+                    </figure>
+                    <!-- /wp:image -->
+
+                    <!-- wp:group {"layout":{"type":"default"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:heading {"level":2} -->
+                        <h2>このページの構成について</h2>
+                        <!-- /wp:heading -->
+                        
+                        <!-- wp:paragraph -->
+                        <p>左側に要点、右側に詳細を配置することで、読みやすく、情報情報を拾いやすいように工夫しました。</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:group {"layout":{"type":"default"}} -->
+                    <div class="wp-block-group">
+                        <!-- wp:heading {"level":2} -->
+                        <h2>今後の展望</h2>
+                        <!-- /wp:heading -->
+                        
+                        <!-- wp:list -->
+                        <ul>
+                            <li>作品の追加</li>
+                            <li>タグによるソート機能の実装</li>
+                            <li>ブログ機能の追加</li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                    <!-- /wp:group -->
+                </section>
+                <!-- /wp:group -->
+            ',
+        )
+    );
+}
+add_action('init', 'makokamiya_register_block_patterns');
 
 /**
  * Implement the Custom Header feature.

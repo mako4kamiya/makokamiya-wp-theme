@@ -514,11 +514,10 @@ footer {
             z-index: 1;
             position: relative;
             border: unset;
-            background: unset;
+            background-color: unset;
             color: unset;
             line-height: unset;
             padding: unset;
-            background-image: url("../images/button_menu_dark.png");
             background-repeat: no-repeat;
             background-size: 44px;
             width: 44px;
@@ -543,50 +542,11 @@ footer {
                 }
             }
             &.toggled {
-                button {
-                    background-image: url("../images/button_close_dark.png");
-                }
                 .menu-menu-container {
                     transform: translateY(56px);
                 }
             }
         }
-        /* ul {
-            z-index: -1;
-            background-color: var(--bg-overlay-light);
-            border-bottom: 1px solid var(--ui-border);
-            transform: translateY(calc(-100% + 56px));
-            transition: transform 0.3s ease-in-out;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            &[data-isopen="true"] {
-                transform: translateY(56px);
-                ul {
-                    opacity: 1;
-                }
-                +#MenuButton {
-                    .menu {
-                        opacity: 0;
-                        transition: opacity 0.3s ease-in-out;
-                    }
-                    .close {
-                        opacity: 1;
-                        transition: opacity 0.3s ease-in-out;
-                    }
-                }
-            }
-        } */
-        /* #MenuButton {
-            display: block;
-            img {
-                &.menu {
-                    position: absolute;
-                    opacity: 1;
-                    transition: opacity 0.3s ease-in-out;
-                }
-            }
-
-        } */
     }
     main {
         height: auto;

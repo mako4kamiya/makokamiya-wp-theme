@@ -20,7 +20,7 @@
 							<?php else : ?>
 								<a class="url">https://example.com</a>
 							<?php endif; ?>
-							<img class="icon" src="<?php echo esc_url( get_template_directory_uri() . '/images/new_window.png' ); ?>" alt="new_window">
+							<img class="icon" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/new_window_icon.png' ); ?>" alt="new_window">
 						</div>
 					</div>
 					<section class="thumbnail sp-only">
