@@ -74,11 +74,7 @@
 						<p>作品の簡単な説明を入力してください。</p>
 					<?php endif; ?>
 				</div>
-				<div class="pankuzu pc-only">
-					<a href="/">HOME</a>
-					<span class="arrow">></span>
-					<p>私のポートフォリオサイト</p>
-				</div>
+				<?php makokamiya_wp_theme_breadcrumbs('pc-only'); ?>
 			</div>
 		</div>
 	</div>

@@ -163,3 +163,36 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+if ( ! function_exists( 'makokamiya_wp_theme_breadcrumbs' ) ) :
+    /**
+     * パンくずリストを生成する関数
+     */
+    function makokamiya_wp_theme_breadcrumbs($class = '') {
+		$classes = !empty($class) ? 'breadcrumb ' . esc_attr($class) : 'breadcrumb';
+		
+        // ホームリンク
+		echo '<nav class="' . $classes . '" aria-label="パンくずリスト">';
+        echo '<a href="' . esc_url(home_url()) . '">HOME</a>';
+
+        // 投稿タイプアーカイブ（カスタム投稿タイプ用）
+        if (is_singular('works')) {
+            $post_type = get_post_type_object(get_post_type());
+            echo ' &gt; <a href="' . esc_url(get_post_type_archive_link('works')) . '">' . esc_html($post_type->label) . '</a>';
+        }
+
+        // 単一投稿/ページ
+        if (is_single() || is_page()) {
+            echo ' &gt; ';
+            the_title();
+        }
+
+        // カテゴリー/タグアーカイブ
+        if (is_category() || is_tag()) {
+            echo ' &gt; ';
+            single_term_title();
+        }
+
+        echo '</nav>';
+    }
+endif;

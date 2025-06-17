@@ -200,7 +200,7 @@ function makokamiya_register_post_type_works() {
     register_post_type(
         'works',
         array(
-            'label' => 'Works', // 管理画面メニューなどに表示される投稿タイプの名前
+            'label' => 'WORKS', // 管理画面メニューなどに表示される投稿タイプの名前
             'public' => true, // サイト上・管理画面の両方で公開（trueで一般公開、falseで非公開）
             'has_archive' => true, // 一覧ページ（アーカイブ）を自動生成（例: /works/ で一覧表示）
             'menu_position' => 5, // 管理画面メニューの表示位置（数字が小さいほど上に表示）
