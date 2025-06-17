@@ -400,34 +400,40 @@ article {
         .right-contents {
             padding: 0 2%;
             padding-bottom: 56px;
-            section {
-                &.thumbnail {
+            section.thumbnail {
                     margin-bottom: 56px;
+                    padding: 3rem 0;
+                    height: calc(100vh - 112px);
                     img {
                         height: 100%;
                         object-fit: cover;
                         margin: unset;
                     }
-                }
+            }
+            div.alignwide {
                 padding: 3rem 0;
-                height: calc(100vh - 112px);
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                img {
-                    margin-bottom: 1rem;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                }
-                .text_field {
-                    margin: 0 10%;
-                    p, li {
-                        /* Std-16N-170-ja */
-                        font-optical-sizing: auto;
-                        font-weight: normal;
-                        font-style: normal;
-                        font-size: 1rem; /* 16x */
-                        line-height: 1.7;
-                        letter-spacing: 0.02em;
+                min-height: calc(100vh - 112px);
+                div.wp-block-group__inner-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    figure.wp-block-image {
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    }
+                    div.wp-block-group__inner-container {
+                        margin: 0 10%;
+                        li {
+                            list-style: initial;
+                        }
+                        p, li {
+                            /* Std-16N-170-ja */
+                            font-optical-sizing: auto;
+                            font-weight: normal;
+                            font-style: normal;
+                            font-size: 1rem; /* 16x */
+                            line-height: 1.7;
+                            letter-spacing: 0.02em;
+                        }
                     }
                 }
             }
