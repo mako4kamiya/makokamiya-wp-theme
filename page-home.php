@@ -25,7 +25,7 @@
 							<?php endforeach; ?>
 						<?php endif; ?>
 					</div>
-					<?php if(the_title()) : ?>
+					<?php if( get_the_title() ) : ?>
 						<p class="title"><?php the_title(); ?></p>
 					<?php else : ?>
 						<p class="title">(タイトルなし)</p>
