@@ -389,38 +389,41 @@ function save_works_custom_fields($post_id) {
 add_action('save_post', 'save_works_custom_fields');
 
 /**
- * Register custom block patterns
+ * カスタムブロックパターンを登録
  */
 function makokamiya_register_block_patterns() {
-    // パターンカテゴリーを登録
-    register_block_pattern_category('makokamiya-patterns', array(
-        'label' => __('Mako Kamiya Patterns', 'makokamiya-wp-theme')
-    ));
-
-    // 作品紹介パターンを登録
-    register_block_pattern(
-        'makokamiya-wp-theme/works-intro',
+    // カスタムブロックパターンカテゴリーを登録
+    register_block_pattern_category(
+        'makokamiya-patterns',
         array(
-            'title'       => __('Works Introduction', 'makokamiya-wp-theme'),
-            'description' => _x('A section to introduce works with image and description.', 'Block pattern description', 'makokamiya-wp-theme'),
-            'categories'  => array('makokamiya-patterns'),
+            'label' => __('makokamiya-wp-theme用', 'makokamiya-wp-theme'), // カテゴリー名
+        )
+    );
+
+    // デフォルトブロックパターンを登録
+    register_block_pattern(
+        'makokamiya-wp-theme/default-pattern', // パターンのスラッグ
+        array(
+            'title'       => __('デフォルトパターン', 'makokamiya-wp-theme'), // パターンのタイトル
+            'description' => _x('画像とテキストを含むデフォルトのブロックパターンです。', 'ブロックパターンの説明', 'makokamiya-wp-theme'), // パターンの説明
+            'categories'  => array('makokamiya-patterns'), // カテゴリーを指定
             'content'     => '
                 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-                <section class="wp-block-group alignwide">
+                <div class="wp-block-group alignwide">
                     <!-- wp:image {"sizeSlug":"large"} -->
                     <figure class="wp-block-image size-large">
-                        <img src="images/portfolioImg2.png" alt="portfolioImg2"/>
+                        <img src="' . get_template_directory_uri() . '/images/default-img.png" alt="デフォルト画像"/>
                     </figure>
                     <!-- /wp:image -->
 
                     <!-- wp:group {"layout":{"type":"default"}} -->
                     <div class="wp-block-group">
                         <!-- wp:heading {"level":2} -->
-                        <h2>このページの構成について</h2>
+                        <h2>作品の概要</h2>
                         <!-- /wp:heading -->
                         
                         <!-- wp:paragraph -->
-                        <p>左側に要点、右側に詳細を配置することで、読みやすく、情報情報を拾いやすいように工夫しました。</p>
+                        <p>この作品は、クライアントの要望に応じて制作したWebサイトです。レスポンシブデザインを採用し、スマートフォンやタブレットでも快適に閲覧できるよう工夫しました。</p>
                         <!-- /wp:paragraph -->
                     </div>
                     <!-- /wp:group -->
@@ -428,26 +431,25 @@ function makokamiya_register_block_patterns() {
                     <!-- wp:group {"layout":{"type":"default"}} -->
                     <div class="wp-block-group">
                         <!-- wp:heading {"level":2} -->
-                        <h2>今後の展望</h2>
+                        <h2>こだわったポイント</h2>
                         <!-- /wp:heading -->
                         
                         <!-- wp:list -->
                         <ul>
-                            <li>作品の追加</li>
-                            <li>タグによるソート機能の実装</li>
-                            <li>ブログ機能の追加</li>
+                            <li>ユーザビリティを重視した直感的なナビゲーション</li>
+                            <li>読みやすいフォントと適切な行間の設定</li>
+                            <li>高速なページロードを実現する画像最適化</li>
                         </ul>
                         <!-- /wp:list -->
                     </div>
                     <!-- /wp:group -->
-                </section>
+                </div>
                 <!-- /wp:group -->
             ',
         )
     );
 }
 add_action('init', 'makokamiya_register_block_patterns');
-
 /**
  * Implement the Custom Header feature.
  */
