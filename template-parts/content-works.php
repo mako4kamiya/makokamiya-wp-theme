@@ -23,7 +23,7 @@
 							<?php endif; ?>
 						</div>
 					</div>
-					<section class="thumbnail sp-only">
+					<section class="thumbnail is-mobile">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<?php the_post_thumbnail('large'); ?>
 					<?php endif; ?>
@@ -33,10 +33,10 @@
 						<?php if ( $roles && ! is_wp_error( $roles ) ) : ?>
 							<?php $role_names = wp_list_pluck( $roles, 'name' ); ?>
 							<dt>担当範囲</dt>
-							<dd class="pc-only">
+							<dd class="is-pc">
 								<?php echo implode('<br>', array_map('esc_html', $role_names)); ?>
 							</dd>
-							<dd class="sp-only">
+							<dd class="is-mobile">
 								<?php echo esc_html( implode(', ', $role_names) ); ?>
 							</dd>
 						<?php endif; ?>
@@ -46,10 +46,10 @@
 						<?php if ( $tools && ! is_wp_error( $tools ) ) : ?>
 							<?php $tool_names = wp_list_pluck( $tools, 'name' ); ?>
 							<dt>使用ツール</dt>
-							<dd class="pc-only">
+							<dd class="is-pc">
 								<?php echo implode('<br>', array_map('esc_html', $tool_names)); ?>
 							</dd>
-							<dd class="sp-only">
+							<dd class="is-mobile">
 								<?php echo esc_html( implode(', ', $tool_names) ); ?>
 							</dd>
 						<?php endif; ?>
@@ -66,14 +66,14 @@
 						<p><?php echo esc_html( $summary ); ?></p>
 					<?php endif; ?>
 				</div>
-				<?php makokamiya_wp_theme_breadcrumbs('pc-only'); ?>
+				<?php makokamiya_wp_theme_breadcrumbs('is-pc'); ?>
 			</div>
 		</div>
 	</div>
 	<div class="right">
 		<div class="right-contents">
 			<?php if ( has_post_thumbnail() ) : ?>
-				<section class="thumbnail pc-only">
+				<section class="thumbnail is-pc">
 					<?php the_post_thumbnail('large'); ?>
 				</section>
 			<?php endif; ?>
@@ -95,7 +95,7 @@
 			?>
 		</div>
 	</div>
-	<div class="pankuzu sp-only">
+	<div class="pankuzu is-mobile">
 		<a href="/">HOME</a>
 		<span class="arrow">></span>
 		<p>私のポートフォリオサイト</p>

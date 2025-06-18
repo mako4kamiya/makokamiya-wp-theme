@@ -13,7 +13,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'makokamiya-wp-theme' ); ?></a>
 
-	<div class="flames pc-only">
+	<div class="flames is-pc">
         <div class="frame right"></div>
         <div class="frame Left"></div>
 		<div class="line top"></div>

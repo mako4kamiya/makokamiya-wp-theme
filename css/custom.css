@@ -83,7 +83,7 @@ a.url {
     letter-spacing: 0.02em;
     text-decoration: underline;
 }
-.sp-only {
+.is-mobile {
     display: none!important;
 }
 
@@ -501,10 +501,10 @@ footer {
     }
 }
 @media screen and (max-width: 768px) {
-    .sp-only {
+    .is-mobile  {
         display: block !important;
     }
-    .pc-only {
+    .is-pc {
         display: none !important;
     }
     header {
@@ -634,7 +634,7 @@ footer {
                     }
                 }
             }
-            .pankuzu.sp-only {
+            .pankuzu.is-mobile {
                 display: flex !important;
                 padding: 0 1rem;
                 position: absolute;
