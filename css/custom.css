@@ -425,7 +425,7 @@ main.about {
     padding-left: 14.5rem;
     padding-right: 14.5rem;
     gap: 2rem;
-    .h2_group {
+    .h1_group {
         span {
             /* Std-16B-170-ja */
             font-family: "Noto Sans JP", sans-serif;
@@ -440,6 +440,7 @@ main.about {
     .text_group {
         display: grid;
         grid-template-columns: 1fr 2fr;
+        align-items: center;
         gap: 2rem;
         padding: 0 6rem;
         .text_field {

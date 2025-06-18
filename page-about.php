@@ -1,19 +1,28 @@
 <?php get_header(); ?>
 
 	<main id="primary" class="about site-main">
-        <div class="h2_group">
+        <div class="h1_group">
             <h1>ABOUT</h1>
             <span>わたしについて</span>
         </div>
         <div class="text_group">
+			<?php $admin_user = get_user_by('login', 'makokamiyalocal'); ?>
 			<?php
-			$author_id = get_the_author_meta('ID');
-			echo get_avatar($author_id, 96);
-			echo '<h2>' . get_the_author_meta('display_name') . '</h2>';
-			echo '<p>' . get_the_author_meta('description') . '</p>';
+			if ($admin_user) :
+				$author_id = $admin_user->ID;
+				echo get_avatar($author_id, 96);
 			?>
-			<?php the_content(); ?>
-            </div>
+			<div class="text_field">
+			<?php 
+				echo '<h2>' . esc_html(get_the_author_meta('display_name', $author_id)) . '</h2>';
+				the_content();
+			?>
+			</div>
+			<?php
+			else :
+				echo '<p>管理者ユーザーが見つかりません。</p>';
+			endif ;
+			?>
         </div>
 		<?php makokamiya_wp_theme_breadcrumbs(); ?>
 	</main>
