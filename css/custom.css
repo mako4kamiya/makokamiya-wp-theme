@@ -241,7 +241,7 @@ main {
     height: 100vh;
     padding: 56px;
 }
-main#Home {
+main.home {
     padding: unset;
     display: flex;
     align-items: center;
@@ -557,7 +557,7 @@ footer {
     main {
         height: auto;
     }
-    main#Home {
+    main.home {
         padding-top: calc(56px + 3rem);
         padding-right: 1rem;
         padding-left: 1rem;
