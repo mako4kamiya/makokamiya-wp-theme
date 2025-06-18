@@ -4,7 +4,6 @@
 	<?php
 	$works_query = new WP_Query( array(
         'post_type'      => 'works',
-        'posts_per_page' => 5, // 取得する件数
     ) );
 	if ( $works_query->have_posts() ) : ?>
 	<div class="swiper">
