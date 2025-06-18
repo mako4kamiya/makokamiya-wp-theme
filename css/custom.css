@@ -418,7 +418,7 @@ main.works {
         }
     }
 }
-main#About{
+main.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -622,7 +622,7 @@ footer {
             }
         }
     }
-    main#About{
+    main.about {
         padding-top: calc(56px + 3rem);
         padding-right: 1rem;
         padding-left: 1rem;
