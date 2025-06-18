@@ -95,9 +95,5 @@
 			?>
 		</div>
 	</div>
-	<div class="pankuzu is-mobile">
-		<a href="/">HOME</a>
-		<span class="arrow">></span>
-		<p>私のポートフォリオサイト</p>
-	</div>
+	<?php makokamiya_wp_theme_breadcrumbs('is-mobile'); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -216,25 +216,6 @@ header {
         }
     }
 }
-.pankuzu {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    a, p {
-        /* LinkOln-16N-100-en-un */
-        font-optical-sizing: auto;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 1rem; /* 16px */
-        line-height: 1;
-        text-decoration: underline;
-        &:last-child {
-            color: var(--text-primary-dark);
-            text-decoration: unset;
-        }
-    }
-}
 main {
     height: 100vh;
     padding: 56px;
@@ -634,8 +615,7 @@ footer {
                     }
                 }
             }
-            .pankuzu.is-mobile {
-                display: flex !important;
+            .breadcrumb.is-mobile {
                 padding: 0 1rem;
                 position: absolute;
                 bottom: 56px;
