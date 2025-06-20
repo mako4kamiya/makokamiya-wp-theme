@@ -1,6 +1,11 @@
 let swiper;
 
 function initSwiper() {
+    // 現在のURLが /works の場合はSwiperを初期化しない
+    if (window.location.pathname === '/works/') {
+        return;
+    }
+
     if (swiper) swiper.destroy(true, true);
 
     if (window.matchMedia("(min-width: 768px)").matches) {
