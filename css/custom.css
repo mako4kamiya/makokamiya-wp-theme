@@ -652,6 +652,18 @@ footer {
             }
         }
     }
+    main.works-archive {
+        padding-top: calc(56px + 3rem);
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 3rem;
+        .swiper {
+            margin: unset;
+            .swiper-wrapper {
+                grid-template-columns: initial;
+            }
+        }
+    }
     main.about {
         padding-top: calc(56px + 3rem);
         padding-right: 1rem;
