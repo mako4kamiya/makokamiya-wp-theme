@@ -571,14 +571,19 @@ footer {
         padding-left: 1rem;
         padding-bottom: 3rem;
         .swiper {
-            .swiper-slide {
-                width: 100%;
-                height: auto !important;
-                .caption {
+            .swiper-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                .swiper-slide {
                     width: 100%;
-                    p {
-                        &.title {
-                            text-align: center;
+                    height: auto !important;
+                    .caption {
+                        width: 100%;
+                        p {
+                            &.title {
+                                text-align: center;
+                            }
                         }
                     }
                 }

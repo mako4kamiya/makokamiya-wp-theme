@@ -1,41 +1,40 @@
 let swiper;
 
 function initSwiper() {
-    // 現在のURLが /works の場合はSwiperを初期化しない
+    // 現在のURLが /works/ の場合、Swiperを初期化しない
     if (window.location.pathname === '/works/') {
         return;
     }
 
-    if (swiper) swiper.destroy(true, true);
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        swiper = new Swiper('.swiper', {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            loop: true,
-            coverflowEffect: {
-                depth: 100,
-                modifier: 1,
-                rotate: 50,
-                scale: 1,
-                stretch: 0,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    } else {
-        swiper = new Swiper('.swiper', {
-            direction: "vertical",
-            spaceBetween: 32,
-            loop: true,
-            grabCursor: true,
-        });
+    // モバイル画面の場合、Swiperを初期化しない
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        return;
     }
+
+    // 既存のSwiperインスタンスを破棄
+    if (swiper) {
+        swiper.destroy(true, true);
+    }
+
+    swiper = new Swiper('.swiper', {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect: {
+            depth: 100,
+            modifier: 1,
+            rotate: 50,
+            scale: 1,
+            stretch: 0,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
 }
 
 // ページ読み込み時にSwiperを初期化
