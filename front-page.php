@@ -45,8 +45,10 @@
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
-	<?php wp_reset_postdata(); ?>
+    <?php else : ?>
+        <p style="margin: 0 auto">表示する作品がありません。</p>
     <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
 </main>
 
 <?php get_footer();
