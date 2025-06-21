@@ -3,15 +3,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mako Kamiya WP Theme 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makokamiya-wp-theme\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makokamiya-wp-"
+"theme\n"
+"POT-Creation-Date: 2025-06-21T06:19:26+00:00\n"
+"PO-Revision-Date: 2025-06-21 15:30+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-21T06:19:26+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.6\n"
 "X-Domain: makokamiya-wp-theme\n"
 
 #. Theme Name of the theme
@@ -26,7 +29,9 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "A custom WordPress theme developed by Mako Kamiya to showcase her web design and coding work."
+msgid ""
+"A custom WordPress theme developed by Mako Kamiya to showcase her web design "
+"and coding work."
 msgstr ""
 
 #. Author of the theme
@@ -41,21 +46,25 @@ msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "ページが見つかりません"
 
 #: 404.php:21
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
+"お探しのページは存在しないか、移動しました。以下のフォームから検索してみてく"
+"ださい。"
 
 #: 404.php:30
 msgid "Most Used Categories"
-msgstr ""
+msgstr "よく使われるカテゴリー"
 
 #. translators: %1$s: smiley
 #: 404.php:48
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "月別アーカイブをご確認ください。 %1$s"
 
 #. translators: 1: title.
 #: comments.php:35
@@ -70,7 +79,6 @@ msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
-msgstr[1] ""
 
 #: comments.php:68
 msgid "Comments are closed."
@@ -149,8 +157,7 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100
-#: template-parts/content-page.php:39
+#: inc/template-tags.php:100 template-parts/content-page.php:39
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -162,8 +169,7 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: single-works.php:88
-#: template-parts/content.php:40
+#: single-works.php:88 template-parts/content.php:40
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -183,18 +189,22 @@ msgstr ""
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:25
-#: template-parts/content.php:53
+#: template-parts/content-page.php:25 template-parts/content.php:53
 msgid "Pages:"
 msgstr ""
