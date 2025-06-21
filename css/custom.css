@@ -129,7 +129,7 @@ a.url {
         }
     }
 }
-header {
+header.theme-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -518,7 +518,7 @@ footer {
     .is-pc {
         display: none !important;
     }
-    header {
+    header.theme-header {
         padding: unset;
         .site-branding {
             z-index: 1;

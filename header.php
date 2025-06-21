@@ -21,7 +21,7 @@
 		<div class="line left"></div>
         <div class="line bottom"></div>
     </div>
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="theme-header site-header">
 		<div class="site-branding">
 			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></h1>
