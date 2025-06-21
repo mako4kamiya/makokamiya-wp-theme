@@ -62,4 +62,8 @@ Thumbs.db
 *.swp
 *.tmp
 
+# .gitignore
+/vendor/
+!composer.lock  # このファイルはコミットする
+
 README_ORIGINAL.md
