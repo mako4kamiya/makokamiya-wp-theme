@@ -23,7 +23,7 @@
 			<div class="line bottom"></div>
 		</div>
 	<?php endif; ?>
-	<header id="masthead" class="works-header site-header">
+	<header id="masthead" class="portfolio-header site-header">
 		<div class="site-branding">
 			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></h1>

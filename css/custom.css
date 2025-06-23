@@ -129,7 +129,7 @@ a.url {
         }
     }
 }
-header.works-header {
+.portfolio-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -216,11 +216,21 @@ header.works-header {
         }
     }
 }
-main.works-main {
+aside {
+    max-width: 1312px;
+    margin: 0 auto;
+}
+.site-main {
+    padding-top: calc(56px + 1rem);
+    max-width: 1312px;
+    margin: 0 auto;
+}
+.portfolio-main {
     height: 100vh;
     padding: 56px;
 }
-main.home {
+.front-main {
+    height: 100vh;
     padding: unset;
     display: flex;
     align-items: center;
@@ -308,7 +318,7 @@ main.home {
         }
     }
 }
-main.works {
+.site-main.works {
     article {
         display: flex;
         .left {
@@ -426,7 +436,7 @@ main.works {
         }
     }
 }
-main.works-archive {
+.site-main.works-archive {
     display: flex;
     .swiper {
         margin: 1rem;
@@ -447,7 +457,7 @@ main.works-archive {
         overflow: hidden;
     }
 }
-main.about {
+.site-main.about {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -506,7 +516,7 @@ main.about {
         letter-spacing: 0.02em;
     }
 }
-.works-footer {
+.portfolio-footer {
     position: fixed;
     left: 0;
     right: 0;
@@ -520,7 +530,7 @@ main.about {
     .is-pc {
         display: none !important;
     }
-    header.works-header {
+    .portfolio-header {
         padding: unset;
         .site-branding {
             z-index: 1;
@@ -564,14 +574,17 @@ main.about {
             }
         }
     }
-    main.works-main {
-        height: auto;
+    aside {
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
-    main.home {
+    .site-main {
+        height: auto;
         padding-top: calc(56px + 3rem);
         padding-right: 1rem;
         padding-left: 1rem;
-        padding-bottom: 3rem;
+    }
+    .front-main {
         .swiper {
             .swiper-wrapper {
                 display: flex;
@@ -592,7 +605,7 @@ main.about {
             }
         }
     }
-    main.works {
+    .site-main.works {
         padding: unset;
         article {
             padding: calc(56px + 3rem) 0 0 0;
@@ -659,11 +672,7 @@ main.about {
             }
         }
     }
-    main.works-archive {
-        padding-top: calc(56px + 3rem);
-        padding-right: 1rem;
-        padding-left: 1rem;
-        padding-bottom: 3rem;
+    .site-main.works-archive {
         .swiper {
             margin: unset;
             .swiper-wrapper {
@@ -671,8 +680,7 @@ main.about {
             }
         }
     }
-    main.about {
-        padding-top: calc(56px + 3rem);
+    .site-main.about {
         padding-right: 1rem;
         padding-left: 1rem;
         padding-bottom: 56px;

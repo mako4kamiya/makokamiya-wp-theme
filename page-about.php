@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main id="primary" class="works-main about site-main">
+	<main id="primary" class="portfolio-main about site-main">
         <div class="h1_group">
             <h1>ABOUT</h1>
             <span>わたしについて</span>
