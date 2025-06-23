@@ -1,5 +1,5 @@
 
-	<footer id="colophon" class="theme-footer site-footer">
+	<footer id="colophon" class="works-footer site-footer">
 		<p class="copyright">&copy; 2025 Mako Kamiya. All rights reserved.</p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

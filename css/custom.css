@@ -129,7 +129,7 @@ a.url {
         }
     }
 }
-header.theme-header {
+header.works-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -216,7 +216,7 @@ header.theme-header {
         }
     }
 }
-main.theme-main{
+main.works-main {
     height: 100vh;
     padding: 56px;
 }
@@ -488,7 +488,7 @@ main.about {
         }
     }
 }
-footer.theme-footer {
+footer.works-footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -518,7 +518,7 @@ footer.theme-footer {
     .is-pc {
         display: none !important;
     }
-    header.theme-header {
+    header.works-header {
         padding: unset;
         .site-branding {
             z-index: 1;
@@ -562,7 +562,7 @@ footer.theme-footer {
             }
         }
     }
-    main.theme-main{
+    main.works-main {
         height: auto;
     }
     main.home {
@@ -684,7 +684,7 @@ footer.theme-footer {
             }
         }
     }
-    footer.theme-footer {
+    footer.works-footer {
         padding: unset;
     }
 }
