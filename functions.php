@@ -476,36 +476,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- * ダミーデータ
- */
-// add_action('init', function() {
-//     if ( !get_option('works_test_data_inserted') ) {
-//         for ($i = 1; $i <= 5; $i++) {
-//             $post_id = wp_insert_post(array(
-//                 'post_title'   => "テスト作品{$i}",
-//                 'post_type'    => 'works',
-//                 'post_status'  => 'publish',
-//                 'post_content' => "これはテスト作品{$i}の説明です。",
-//             ));
-//             // 複数のタグを設定
-//             if ($post_id && !is_wp_error($post_id)) {
-//                 wp_set_object_terms($post_id, array('website', 'original'), 'works_tag');
-//                 wp_set_object_terms($post_id, array('企画・構成', 'デザイン', 'コーディング'), 'works_role');
-//                 wp_set_object_terms($post_id, array('Figma', 'HTML', 'CSS'), 'works_tools');
-//                 set_post_thumbnail($post_id, 78);
-//             }
-//             // カスタムフィールドを追加
-//             update_post_meta($post_id, 'url', 'https://example.com' . $i);
-//             update_post_meta($post_id, 'production_time', $i * 10 . '時間');
-//             update_post_meta($post_id, 'summary', 'これはテスト作品' . $i . 'の要約文です。');
-//         }
-//         update_option('works_test_data_inserted', 1);
-//     }
-// });
-
-/**
- * ダミーデータ投入フラグをリセット（1回だけ実行）
- */
-// delete_option('works_test_data_inserted');
