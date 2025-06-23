@@ -488,18 +488,13 @@ main.about {
         }
     }
 }
-footer.works-footer {
+.site-footer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 56px;
     padding: 0 56px;
     background-color: var(--bg-overlay-light);
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
     p.copyright {
         color: var(--text-primary-dark);
         /* Oln-14N-100-en */
@@ -510,6 +505,13 @@ footer.works-footer {
         line-height: 1;
         letter-spacing: 0.02em;
     }
+}
+.works-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
 }
 @media screen and (max-width: 768px) {
     .is-mobile  {
@@ -684,7 +686,8 @@ footer.works-footer {
             }
         }
     }
-    footer.works-footer {
+    .site-footer {
         padding: unset;
+        position: relative;
     }
 }
