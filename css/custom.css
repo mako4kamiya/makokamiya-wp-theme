@@ -216,7 +216,7 @@ header.theme-header {
         }
     }
 }
-main {
+main.theme-main{
     height: 100vh;
     padding: 56px;
 }
@@ -488,7 +488,7 @@ main.about {
         }
     }
 }
-footer {
+footer.theme-footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -562,7 +562,7 @@ footer {
             }
         }
     }
-    main {
+    main.theme-main{
         height: auto;
     }
     main.home {
@@ -684,7 +684,7 @@ footer {
             }
         }
     }
-    footer {
+    footer.theme-footer {
         padding: unset;
     }
 }

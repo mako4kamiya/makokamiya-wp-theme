@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="primary" class="home site-main">
+<main id="primary" class="theme-main home site-main">
 	<?php
 	$works_query = new WP_Query( array(
         'post_type'      => 'works',
