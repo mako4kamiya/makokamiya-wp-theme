@@ -194,6 +194,65 @@ function makokamiya_wp_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'makokamiya_wp_theme_scripts' );
 
 /**
+ * [デフォルト投稿]カテゴリーの登録
+ */
+function create_blog_categories() {
+    $categories = array(
+        'Web制作' => array(
+            'HTML/CSS',
+            'JavaScript',
+            'フレームワーク',
+            'バックエンド開発',
+            'データベース',
+            'デプロイとホスティング'
+        ),
+        'デザイン制作' => array(
+            'UI/UXデザイン',
+            'グラフィックデザイン',
+            'ワイヤーフレームとプロトタイピング',
+            'デザインツール',
+            'カラーテクニックとタイポグラフィ'
+        )
+    );
+
+    foreach ($categories as $parent => $children) {
+        wp_insert_term($parent, 'category');
+        foreach ($children as $child) {
+            wp_insert_term($child, 'category', array('parent' => term_exists($parent, 'category')['term_id']));
+        }
+    }
+}
+add_action('init', 'create_blog_categories');
+
+/**
+ * [デフォルト投稿]タグの登録
+ */
+function create_blog_tags() {
+    $tags = array(
+        'HTML/CSS' => 'html-css', // 名前 => スラッグ
+        'Figma' => 'figma',
+        'JavaScript' => 'javascript',
+        'WordPress' => 'wordpress',
+        'LP' => 'lp',
+        'ウェブサイト' => 'website',
+        'デザイン' => 'design'
+    );
+
+    foreach ($tags as $name => $slug) {
+        if (!term_exists($name, 'post_tag')) {
+            wp_insert_term(
+                $name, // タグ名
+                'post_tag', // 標準のタグタクソノミー
+                array(
+                    'slug' => $slug // 具体的なスラッグ
+                )
+            );
+        }
+    }
+}
+add_action('init', 'create_blog_tags');
+
+/**
  * カスタム投稿タイプ「works」を追加
  */
 function makokamiya_register_post_type_works() {
@@ -450,6 +509,7 @@ function makokamiya_register_block_patterns() {
     );
 }
 add_action('init', 'makokamiya_register_block_patterns');
+
 /**
  * Implement the Custom Header feature.
  */
