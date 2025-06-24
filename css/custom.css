@@ -530,6 +530,9 @@ aside {
     .is-pc {
         display: none !important;
     }
+    .site {
+        min-height: 100vh;
+    }
     .portfolio-header {
         padding: unset;
         .site-branding {
@@ -585,6 +588,7 @@ aside {
         padding-left: 1rem;
     }
     .front-main {
+        padding-bottom: 56px;
         .swiper {
             .swiper-wrapper {
                 display: flex;
@@ -696,6 +700,12 @@ aside {
     }
     .site-footer {
         padding: unset;
-        position: relative;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .portfolio-footer {
+        position: absolute;
     }
 }
