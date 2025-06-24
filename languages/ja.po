@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Mako Kamiya WP Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makokamiya-wp-"
 "theme\n"
-"POT-Creation-Date: 2025-06-24T03:53:53+00:00\n"
-"PO-Revision-Date: 2025-06-24 13:26+0900\n"
+"POT-Creation-Date: 2025-06-24T04:53:39+00:00\n"
+"PO-Revision-Date: 2025-06-24 14:07+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -46,23 +46,25 @@ msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "ページが見つかりません。"
 
 #: 404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"お探しのページは存在しないか、移動しました。以下のフォームから検索してみてく"
+"ださい。"
 
 #: 404.php:30
 msgid "Most Used Categories"
-msgstr ""
+msgstr "よく使われるカテゴリー"
 
 #. translators: %1$s: smiley
 #: 404.php:48
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "月別アーカイブをご確認ください。%1$s"
 
 #. translators: 1: title.
 #: comments.php:35
@@ -116,14 +118,14 @@ msgstr ""
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr "投稿日： %s"
+msgstr "投稿日：%s"
 
 #. translators: %s: post author.
 #: inc/template-tags.php:46
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr "投稿者： %s"
+msgstr "投稿者：%s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:63
@@ -134,7 +136,7 @@ msgstr ""
 #: inc/template-tags.php:66
 #, php-format
 msgid "Posted in %1$s"
-msgstr "カテゴリー： %1$s"
+msgstr "カテゴリー：%1$s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:70
@@ -146,7 +148,7 @@ msgstr ""
 #: inc/template-tags.php:73
 #, php-format
 msgid "Tagged %1$s"
-msgstr "タグ： %1$s"
+msgstr "タグ：%1$s"
 
 #. translators: %s: post title
 #: inc/template-tags.php:83
@@ -158,7 +160,7 @@ msgstr "コメントを残す<span class=\"screen-reader-text\">%s</span>"
 #: inc/template-tags.php:100 template-parts/content-page.php:39
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr "編集 <span class=\"screen-reader-text\">%s</span>"
+msgstr "編集<span class=\"screen-reader-text\">%s</span>"
 
 #. translators: %s: search query.
 #: search.php:21
@@ -182,7 +184,7 @@ msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr ""
+msgstr "表示するコンテンツが見つかりませんでした"
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
@@ -190,6 +192,7 @@ msgstr ""
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"初めての投稿をしてみませんか？<a href=\"%1$s\">こちらから始められます</a>."
 
 #: template-parts/content-none.php:37
 msgid ""
