@@ -201,6 +201,7 @@ function create_blog_categories() {
         'Web制作' => 'web-production',
         'デザイン制作' => 'design-production',
         '動画制作' => 'video-production',
+        '未分類' => 'uncategorized', // 名前 => スラッグ
     );
 
     foreach ($categories as $name => $slug) {
@@ -209,6 +210,7 @@ function create_blog_categories() {
         }
     }
 }
+add_action('init', 'create_blog_categories');
 
 /**
  * [デフォルト投稿]タグの登録
