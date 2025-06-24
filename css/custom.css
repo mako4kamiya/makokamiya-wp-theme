@@ -303,6 +303,8 @@ a.url {
     ポートフォリオ画面（フレーム付）のスタイル
  */
 .portfolio-site {
+    max-width: initial;
+    display: block;
     .flames {
         .frame {
             width: 56px;
