@@ -198,31 +198,17 @@ add_action( 'wp_enqueue_scripts', 'makokamiya_wp_theme_scripts' );
  */
 function create_blog_categories() {
     $categories = array(
-        'Web制作' => array(
-            'HTML/CSS',
-            'JavaScript',
-            'フレームワーク',
-            'バックエンド開発',
-            'データベース',
-            'デプロイとホスティング'
-        ),
-        'デザイン制作' => array(
-            'UI/UXデザイン',
-            'グラフィックデザイン',
-            'ワイヤーフレームとプロトタイピング',
-            'デザインツール',
-            'カラーテクニックとタイポグラフィ'
-        )
+        'Web制作' => 'web-production',
+        'デザイン制作' => 'design-production',
+        '動画制作' => 'video-production',
     );
 
-    foreach ($categories as $parent => $children) {
-        wp_insert_term($parent, 'category');
-        foreach ($children as $child) {
-            wp_insert_term($child, 'category', array('parent' => term_exists($parent, 'category')['term_id']));
+    foreach ($categories as $name => $slug) {
+        if (!term_exists($name, 'category')) {
+            wp_insert_term($name, 'category', array('slug' => $slug));
         }
     }
 }
-add_action('init', 'create_blog_categories');
 
 /**
  * [デフォルト投稿]タグの登録
