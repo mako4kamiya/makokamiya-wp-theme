@@ -638,10 +638,14 @@ a.url {
             padding-top: calc(56px + 3rem);
             padding-right: 1rem;
             padding-left: 1rem;
+            padding-bottom: unset;
         }
         aside {
+            padding-top: unset;
             padding-right: 1rem;
             padding-left: 1rem;
+            position: relative;
+            min-width: initial;
         }
         .site-footer {
             padding: unset;
