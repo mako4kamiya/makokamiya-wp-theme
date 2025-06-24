@@ -10,20 +10,24 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<?php if( is_front_page() || is_singular('works') || is_post_type_archive('works') || is_page('about') ) : ?>
+	<div id="page" class="portfolio-site site">
+<?php else : ?>
+	<div id="page" class="site">
+<?php endif; ?>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'makokamiya-wp-theme' ); ?></a>
 
 	<?php if( is_front_page() || is_singular('works') || is_post_type_archive('works') || is_page('about') ) : ?>
 		<div class="flames is-pc">
 			<div class="frame right"></div>
-			<div class="frame Left"></div>
+			<div class="frame left"></div>
 			<div class="line top"></div>
 			<div class="line right"></div>
 			<div class="line left"></div>
 			<div class="line bottom"></div>
 		</div>
 	<?php endif; ?>
-	<header id="masthead" class="portfolio-header site-header">
+	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></h1>
