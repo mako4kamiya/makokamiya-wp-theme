@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Mako Kamiya WP Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makokamiya-wp-"
 "theme\n"
-"POT-Creation-Date: 2025-06-21T06:19:26+00:00\n"
-"PO-Revision-Date: 2025-06-21 15:30+0900\n"
+"POT-Creation-Date: 2025-06-24T03:53:53+00:00\n"
+"PO-Revision-Date: 2025-06-24 13:26+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -46,25 +46,23 @@ msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "ページが見つかりません"
+msgstr ""
 
 #: 404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"お探しのページは存在しないか、移動しました。以下のフォームから検索してみてく"
-"ださい。"
 
 #: 404.php:30
 msgid "Most Used Categories"
-msgstr "よく使われるカテゴリー"
+msgstr ""
 
 #. translators: %1$s: smiley
 #: 404.php:48
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "月別アーカイブをご確認ください。 %1$s"
+msgstr ""
 
 #. translators: 1: title.
 #: comments.php:35
@@ -96,15 +94,15 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:399
+#: functions.php:458
 msgid "makokamiya-wp-theme用"
 msgstr ""
 
-#: functions.php:407
+#: functions.php:466
 msgid "デフォルトパターン"
 msgstr ""
 
-#: functions.php:408
+#: functions.php:467
 msgctxt "ブロックパターンの説明"
 msgid "画像とテキストを含むデフォルトのブロックパターンです。"
 msgstr ""
@@ -118,14 +116,14 @@ msgstr ""
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "投稿日： %s"
 
 #. translators: %s: post author.
 #: inc/template-tags.php:46
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "投稿者： %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:63
@@ -136,7 +134,7 @@ msgstr ""
 #: inc/template-tags.php:66
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "カテゴリー： %1$s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:70
@@ -148,19 +146,19 @@ msgstr ""
 #: inc/template-tags.php:73
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "タグ： %1$s"
 
 #. translators: %s: post title
 #: inc/template-tags.php:83
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
+msgstr "コメントを残す<span class=\"screen-reader-text\">%s</span>"
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: inc/template-tags.php:100 template-parts/content-page.php:39
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
+msgstr "編集 <span class=\"screen-reader-text\">%s</span>"
 
 #. translators: %s: search query.
 #: search.php:21
@@ -172,7 +170,7 @@ msgstr ""
 #: single-works.php:88 template-parts/content.php:40
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
+msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: single.php:23
 msgid "Previous:"
