@@ -73,6 +73,10 @@ a.url {
     デフォルトのスタイル
  */
 .site {
+    max-width: 1312px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
     .site-header {
         display: flex;
         justify-content: space-between;
@@ -160,11 +164,28 @@ a.url {
             }
         }
     }
-    main {
+    .site-main {
         padding-top: calc(56px + 1rem);
+        padding-bottom: 56px;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        .page-header {
+            h1.page-title {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
     }
     aside {
         padding-top: calc(56px + 1rem);
+        padding-bottom: 56px;
+        min-width: 480px;
+        height: 100%;
+        position: sticky;
+        top: 0;
+        right: 0;
     }
     .swiper {
         .swiper-wrapper {
@@ -256,6 +277,10 @@ a.url {
         height: 56px;
         padding: 0 56px;
         background-color: var(--bg-overlay-light);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
         p.copyright {
             color: var(--text-primary-dark);
             /* Oln-14N-100-en */
@@ -269,7 +294,8 @@ a.url {
     }
     .entry-footer {
         display: flex;
-        gap: 1rem;
+        flex-wrap: wrap;
+        column-gap: 2rem;
     }
 }
 
@@ -562,7 +588,7 @@ a.url {
         display: none !important;
     }
     .site {
-        min-height: 100vh;
+        display: block;
         .site-header {
             padding: unset;
             .site-branding {
@@ -607,22 +633,18 @@ a.url {
                 }
             }
         }
-        aside {
-            padding-right: 1rem;
-            padding-left: 1rem;
-        }
         .site-main {
             height: auto;
             padding-top: calc(56px + 3rem);
             padding-right: 1rem;
             padding-left: 1rem;
         }
+        aside {
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
         .site-footer {
             padding: unset;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
         }
     }
     /* 
