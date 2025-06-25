@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main id="primary" class="works site-main">
+	<main id="primary" class="single-works-main site-main">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="left">
 			<div class="left-fixed">

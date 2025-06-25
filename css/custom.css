@@ -74,6 +74,7 @@ a.url {
  */
 .site {
     max-width: 1312px;
+    padding: 0 2rem;
     margin: 0 auto;
     display: flex;
     gap: 2rem;
@@ -167,9 +168,13 @@ a.url {
     .site-main {
         padding-top: calc(56px + 1rem);
         padding-bottom: 56px;
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center; */
+        /* gap: 3rem; */
         .page-header {
             h1.page-title {
                 display: flex;
@@ -181,7 +186,7 @@ a.url {
     aside {
         padding-top: calc(56px + 1rem);
         padding-bottom: 56px;
-        min-width: 480px;
+        min-width: 25%;
         height: 100%;
         position: sticky;
         top: 0;
@@ -305,6 +310,7 @@ a.url {
 .portfolio-site {
     max-width: initial;
     display: block;
+    padding: unset;
     .flames {
         .frame {
             width: 56px;
@@ -347,18 +353,16 @@ a.url {
             }
         }
     }
-    .front-main {
-        height: 100vh;
-        padding: unset;
-        display: flex;
-        align-items: center;
-    }
     .site-main {
         height: 100vh;
-        max-width: initial;
+        /* max-width: initial; */
         padding: 56px;
-        margin: unset;
-        &.works {
+        /* margin: unset; */
+        &.page-home-main {
+            display: flex;
+            align-items: center;
+        }
+        &.single-works-main {
             article {
                 display: flex;
                 .left {
@@ -486,8 +490,9 @@ a.url {
                 }
             }
         }
-        &.works-archive {
-            display: flex;
+        &.archive-works-main {
+            /* display: flex; */
+            height: auto;
             .swiper {
                 margin: 1rem;
                 display: flex;
@@ -507,13 +512,13 @@ a.url {
                 overflow: hidden;
             }
         }
-        &.about {
-            display: flex;
+        &.page-about-main {
+            /* display: flex;
             flex-direction: column;
             justify-content: center;
             padding-left: 14.5rem;
             padding-right: 14.5rem;
-            gap: 2rem;
+            gap: 2rem; */
             .h1_group {
                 h1 {
                     /* Std-45B-140-en */
@@ -537,9 +542,9 @@ a.url {
             .text_group {
                 display: grid;
                 grid-template-columns: 1fr 2fr;
-                align-items: center;
+                /* align-items: center; */
                 gap: 2rem;
-                padding: 0 6rem;
+                /* padding: 0 6rem; */
                 img {
                     width: 100%;
                 }
@@ -591,6 +596,7 @@ a.url {
     }
     .site {
         display: block;
+        padding: 0 1rem;
         .site-header {
             padding: unset;
             .site-branding {
@@ -638,8 +644,6 @@ a.url {
         .site-main {
             height: auto;
             padding-top: calc(56px + 3rem);
-            padding-right: 1rem;
-            padding-left: 1rem;
             padding-bottom: unset;
         }
         aside {
@@ -657,7 +661,7 @@ a.url {
         ポートフォリオ画面（フレーム付）のスタイル
     */
     .portfolio-site {
-        .front-main {
+        .page-home-main {
             padding-bottom: 56px;
             .swiper {
                 .swiper-wrapper {
@@ -680,7 +684,7 @@ a.url {
             }
         }
         .site-main {
-            &.works {
+            &.single-works-main {
                 padding: unset;
                 article {
                     padding: calc(56px + 3rem) 0 0 0;
@@ -747,7 +751,7 @@ a.url {
                     }
                 }
             }
-            &.works-archive {
+            &.archive-works-main {
                 .swiper {
                     margin: unset;
                     .swiper-wrapper {
@@ -755,7 +759,7 @@ a.url {
                     }
                 }
             }
-            &.about {
+            &.page-about-main {
                 padding-right: 1rem;
                 padding-left: 1rem;
                 padding-bottom: 56px;
