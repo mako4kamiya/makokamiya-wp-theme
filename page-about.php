@@ -1,30 +1,22 @@
 <?php get_header(); ?>
 
-	<main id="primary" class="about site-main">
-        <div class="h1_group">
-            <h1>ABOUT</h1>
-            <span>わたしについて</span>
-        </div>
-        <div class="text_group">
-			<?php $admin_user = get_user_by('login', 'makokamiyalocal'); ?>
-			<?php
-			if ($admin_user) :
-				$author_id = $admin_user->ID;
-				echo get_avatar($author_id, 96);
-			?>
-			<div class="text_field">
-			<?php 
-				echo '<h2>' . esc_html(get_the_author_meta('display_name', $author_id)) . '</h2>';
-				the_content();
-			?>
-			</div>
-			<?php
-			else :
-				echo '<p>管理者ユーザーが見つかりません。</p>';
-			endif ;
-			?>
-        </div>
-		<?php makokamiya_wp_theme_breadcrumbs(); ?>
-	</main>
+	<main id="primary" class="page-about-main site-main">
 
-<?php get_footer();
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
+
+	</main><!-- #main -->
+
+<?php
+get_footer();

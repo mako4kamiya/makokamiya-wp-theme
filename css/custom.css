@@ -182,6 +182,16 @@ a.url {
                 gap: 1rem;
             }
         }
+        .entry-header {
+            h1.entry-title {
+                /* Std-45B-140-en */
+                font-optical-sizing: auto;
+                font-weight: bold;
+                font-style: normal;
+                font-size: 2.8125rem; /* 45px */
+                line-height: 1.4;
+            }
+        }
     }
     aside {
         padding-top: calc(56px + 1rem);
@@ -520,14 +530,6 @@ a.url {
             padding-right: 14.5rem;
             gap: 2rem; */
             .h1_group {
-                h1 {
-                    /* Std-45B-140-en */
-                    font-optical-sizing: auto;
-                    font-weight: bold;
-                    font-style: normal;
-                    font-size: 2.8125rem; /* 45px */
-                    line-height: 1.4;
-                }
                 span {
                     /* Std-16B-170-ja */
                     font-family: "Noto Sans JP", sans-serif;
