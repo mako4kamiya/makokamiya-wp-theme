@@ -194,7 +194,13 @@ function makokamiya_wp_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'makokamiya_wp_theme_scripts' );
 
 /**
- * [デフォルト投稿]カテゴリーの登録
+ * [固定ページ]
+ * 翻訳タイトルを登録
+ */
+
+/**
+ * [デフォルト投稿]
+ * カテゴリーの登録
  */
 function create_blog_categories() {
     $categories = array(
@@ -213,7 +219,8 @@ function create_blog_categories() {
 add_action('init', 'create_blog_categories');
 
 /**
- * [デフォルト投稿]タグの登録
+ * [デフォルト投稿]
+ * タグの登録
  */
 function create_blog_tags() {
     $tags = array(
@@ -241,7 +248,7 @@ function create_blog_tags() {
 add_action('init', 'create_blog_tags');
 
 /**
- * カスタム投稿タイプ「works」を追加
+ * [カスタム投稿 WORKS]の登録
  */
 function makokamiya_register_post_type_works() {
     register_post_type(
@@ -260,6 +267,7 @@ function makokamiya_register_post_type_works() {
 add_action( 'init', 'makokamiya_register_post_type_works' );
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムタクソノミー「works_tag」を追加
  */
 function makokamiya_register_taxonomy_works_tag() {
@@ -277,6 +285,7 @@ function makokamiya_register_taxonomy_works_tag() {
 add_action( 'init', 'makokamiya_register_taxonomy_works_tag' );
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムタクソノミー「works_role」を追加
  */
 function makokamiya_register_taxonomy_works_role() {
@@ -294,6 +303,7 @@ function makokamiya_register_taxonomy_works_role() {
 add_action( 'init', 'makokamiya_register_taxonomy_works_role' );
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムタクソノミー「tools」を追加
  */
 function makokamiya_register_taxonomy_works_tools() {
@@ -311,6 +321,7 @@ function makokamiya_register_taxonomy_works_tools() {
 add_action('init', 'makokamiya_register_taxonomy_works_tools');
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムタフィールド「URL」「制作時間」「要約文」を追加
  */
 function register_custom_fields_for_rest() {
@@ -353,6 +364,7 @@ function register_custom_fields_for_rest() {
 add_action('init', 'register_custom_fields_for_rest');
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムメタボックス「作品情報（URL・制作時間・要約文）」を追加
  */
 function add_works_custom_fields() {
@@ -368,6 +380,7 @@ function add_works_custom_fields() {
 add_action('add_meta_boxes', 'add_works_custom_fields');
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムフィールドの表示
  */
 function render_works_custom_fields($post) {
@@ -406,6 +419,7 @@ function render_works_custom_fields($post) {
 }
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムフィールドの保存処理
  */
 function save_works_custom_fields($post_id) {
@@ -436,6 +450,7 @@ function save_works_custom_fields($post_id) {
 add_action('save_post', 'save_works_custom_fields');
 
 /**
+ * [カスタム投稿 WORKS]
  * カスタムブロックパターンを登録
  */
 function makokamiya_register_block_patterns() {
