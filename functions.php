@@ -368,6 +368,9 @@ add_action('init', 'register_custom_fields_for_rest');
  * カスタムメタボックス「作品情報（URL・制作時間・要約文）」を追加
  */
 function add_works_custom_fields() {
+    // デバッグメッセージを出力
+    // error_log('add_works_custom_fieldsが呼び出されました');
+
     add_meta_box(
         'works_custom_fields', // メタボックスID
         '作品情報', // タイトル
@@ -384,6 +387,9 @@ add_action('add_meta_boxes', 'add_works_custom_fields');
  * カスタムフィールドの表示
  */
 function render_works_custom_fields($post) {
+    // デバッグメッセージを出力
+    // echo '<p>render_works_custom_fieldsが呼び出されました</p>';
+    
     // セキュリティ用のnonceを追加
     wp_nonce_field('works_custom_fields_nonce', 'works_custom_fields_nonce');
 
