@@ -195,8 +195,85 @@ add_action( 'wp_enqueue_scripts', 'makokamiya_wp_theme_scripts' );
 
 /**
  * [固定ページ]
- * 翻訳タイトルを登録
+ * カスタムフィールド「翻訳タイトル」を登録
  */
+function register_custom_fields_in_page_via_rest() {
+    // 「翻訳タイトル」の登録
+    register_post_meta(
+        'page', // 固定ページ用
+        'translation_title', 
+        array(
+            'description' => '翻訳タイトル',
+            'single' => true,
+            'type' => 'string',
+            'show_in_rest' => true, // Gutenberg対応
+        )
+    );
+}
+add_action('init', 'register_custom_fields_in_page_via_rest');
+
+/**
+ * [固定ページ]
+ * 管理画面に「翻訳タイトル」を登録
+ */
+function add_page_translation_title_meta_box() {
+    add_meta_box(
+        'page_translation_title',
+        '翻訳タイトル',
+        'render_page_custom_fields',
+        'page',
+        'normal',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_page_translation_title_meta_box');
+
+/**
+ * [固定ページ]
+ * カスタムフィールドの表示
+ */
+function render_page_custom_fields($post) {
+    if (!$post) {
+        return;
+    }
+    // セキュリティ用のnonceを追加
+    // これにより、フォームの送信が正当なものであることを確認します。
+    // これがないと、悪意のあるユーザーが不正なデータを送信する可能性があります。
+    wp_nonce_field('page_custom_fields_nonce', 'page_custom_fields_nonce');
+
+    // 保存済みの値を取得
+    $translation_title = get_post_meta($post->ID, 'translation_title', true);
+    ?>
+    <table class="form-table">
+        <tr>
+            <th><label for="translation_title">翻訳タイトル</label></th>
+            <td>
+                <input type="text" id="translation_title" name="translation_title" 
+                       value="<?php echo esc_attr($translation_title); ?>" style="width: 100%;" />
+                <p class="description">このページの翻訳タイトルを入力してください。</p>
+            </td>
+        </tr>
+    </table>
+    <?php
+}
+
+/**
+ * [固定ページ]
+ * 翻訳タイトルの保存処理
+ */
+function save_page_custom_fields($post_id) {
+    if (!isset($_POST['page_custom_fields_nonce']) || !wp_verify_nonce($_POST['page_custom_fields_nonce'], 'page_custom_fields_nonce')) {
+        return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_page', $post_id)) return;
+
+    if (isset($_POST['translation_title'])) {
+        update_post_meta($post_id, 'translation_title', sanitize_text_field($_POST['translation_title']));
+    }
+}
+add_action('save_post_page', 'save_page_custom_fields');
 
 /**
  * [デフォルト投稿]
@@ -322,9 +399,9 @@ add_action('init', 'makokamiya_register_taxonomy_works_tools');
 
 /**
  * [カスタム投稿 WORKS]
- * カスタムタフィールド「URL」「制作時間」「要約文」を追加
+ * カスタムタフィールド「URL」「制作時間」「要約文」を登録
  */
-function register_custom_fields_for_rest() {
+function register_custom_fields_in_works_via_rest() {
 	// 「URL」の登録
     register_post_meta(
         'works', // 対象投稿タイプ
@@ -361,11 +438,11 @@ function register_custom_fields_for_rest() {
         )
     );
 }
-add_action('init', 'register_custom_fields_for_rest');
+add_action('init', 'register_custom_fields_in_works_via_rest');
 
 /**
  * [カスタム投稿 WORKS]
- * カスタムメタボックス「作品情報（URL・制作時間・要約文）」を追加
+ * 管理画面に「作品情報（URL・制作時間・要約文）」を登録
  */
 function add_works_custom_fields() {
     // デバッグメッセージを出力
@@ -389,6 +466,10 @@ add_action('add_meta_boxes', 'add_works_custom_fields');
 function render_works_custom_fields($post) {
     // デバッグメッセージを出力
     // echo '<p>render_works_custom_fieldsが呼び出されました</p>';
+
+    if (!$post) {
+        return;
+    }
     
     // セキュリティ用のnonceを追加
     wp_nonce_field('works_custom_fields_nonce', 'works_custom_fields_nonce');
@@ -396,7 +477,7 @@ function render_works_custom_fields($post) {
     // 保存済みの値を取得
     $production_time = get_post_meta($post->ID, 'production_time', true);
     $summary = get_post_meta($post->ID, 'summary', true);
-    $url = get_post_meta($post->ID, 'url', true); // ← ここを追加
+    $url = get_post_meta($post->ID, 'url', true);
     ?>
     <table class="form-table">
 		<tr>
