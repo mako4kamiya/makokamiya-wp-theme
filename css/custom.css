@@ -533,6 +533,7 @@ a.url {
                 .entry-content {
                     margin: unset;
                     display: grid;
+                    align-items: center;
                     column-gap: 2rem;
                     grid-template-columns: repeat(8, 1fr);
                     grid-template-rows: repeat(2, 1fr);
@@ -555,6 +556,7 @@ a.url {
                         letter-spacing: 0.02em;
                     }
                     p {
+                        align-self: start;
                         grid-column: 4 / 8;
                         grid-row: 2 / 3;
                         /* Std-16N-170-ja */
