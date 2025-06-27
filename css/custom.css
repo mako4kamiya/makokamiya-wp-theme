@@ -74,7 +74,7 @@ a.url {
  */
 .site {
     max-width: 1312px;
-    padding: 0 2rem;
+    padding: 0 2rem 56px;
     margin: 0 auto;
     display: flex;
     gap: 2rem;
@@ -167,7 +167,6 @@ a.url {
     }
     .site-main {
         padding-top: calc(56px + 1rem);
-        padding-bottom: 56px;
         .page-header {
             h1.page-title {
                 display: flex;
@@ -198,7 +197,6 @@ a.url {
     }
     aside {
         padding-top: calc(56px + 1rem);
-        padding-bottom: 56px;
         min-width: 25%;
         height: 100%;
         position: sticky;
@@ -525,7 +523,7 @@ a.url {
                 overflow: hidden;
             }
         }
-        &.page-about-main {
+        &.page-profile-main {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             justify-content: center;
@@ -595,8 +593,8 @@ a.url {
         display: none !important;
     }
     .site {
-        display: block;
-        padding: 0 1rem;
+        flex-direction: column;
+        padding: 0 1rem 56px;
         .site-header {
             padding: unset;
             .site-branding {
@@ -643,13 +641,12 @@ a.url {
         }
         .site-main {
             height: auto;
+            min-height: calc(100vh - 56px);;
             padding-top: calc(56px + 3rem);
             padding-bottom: unset;
         }
         aside {
             padding-top: unset;
-            padding-right: 1rem;
-            padding-left: 1rem;
             position: relative;
             min-width: initial;
         }
@@ -662,7 +659,6 @@ a.url {
     */
     .portfolio-site {
         .page-home-main {
-            padding-bottom: 56px;
             .swiper {
                 .swiper-wrapper {
                     display: flex;
@@ -684,6 +680,8 @@ a.url {
             }
         }
         .site-main {
+            padding-right: unset;
+            padding-left: unset;
             &.single-works-main {
                 padding: unset;
                 article {
@@ -759,10 +757,21 @@ a.url {
                     }
                 }
             }
-            &.page-about-main {
-                padding-right: 1rem;
-                padding-left: 1rem;
-                padding-bottom: 56px;
+            &.page-profile-main {
+                grid-template-columns: initial;
+                article {
+                    .entry-content {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0 1rem;
+                        img.avatar {
+                            padding: 1rem;
+                        }
+                        h2 {
+                            align-self: initial;
+                        }
+                    }
+                }
                 .text_group {
                     display: flex;
                     flex-direction: column;

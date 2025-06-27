@@ -10,14 +10,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php if( is_front_page() || is_singular('works') || is_post_type_archive('works') || is_page('about') ) : ?>
+<?php if( is_front_page() || is_singular('works') || is_post_type_archive('works') || is_page('profile') ) : ?>
 	<div id="page" class="portfolio-site site">
 <?php else : ?>
 	<div id="page" class="site">
 <?php endif; ?>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'makokamiya-wp-theme' ); ?></a>
 
-	<?php if( is_front_page() || is_singular('works') || is_post_type_archive('works') || is_page('about') ) : ?>
+	<?php if( is_front_page() || is_singular('works') || is_post_type_archive('works') || is_page('profile') ) : ?>
 		<div class="flames is-pc">
 			<div class="frame right"></div>
 			<div class="frame left"></div>
