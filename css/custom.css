@@ -71,7 +71,7 @@ a.url {
 
 /* 
     デフォルトのスタイル
- */
+*/
 .site {
     max-width: 1312px;
     padding: 0 2rem 56px;
@@ -366,9 +366,7 @@ a.url {
     }
     .site-main {
         height: 100vh;
-        /* max-width: initial; */
         padding: 56px;
-        /* margin: unset; */
         &.page-home-main {
             display: flex;
             align-items: center;
@@ -502,7 +500,6 @@ a.url {
             }
         }
         &.archive-works-main {
-            /* display: flex; */
             height: auto;
             .swiper {
                 margin: 1rem;
