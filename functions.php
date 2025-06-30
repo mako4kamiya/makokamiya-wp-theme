@@ -626,3 +626,14 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * 作者アーカイブページ（/author/username/）へのアクセスを無効化
+ */
+function disable_author_archive() {
+    if (is_author()) {
+        wp_redirect(home_url());
+        exit;
+    }
+}
+add_action('template_redirect', 'disable_author_archive');
