@@ -445,8 +445,6 @@ add_action('init', 'register_custom_fields_in_works_via_rest');
  * 管理画面に「作品情報（URL・制作時間・要約文）」を登録
  */
 function add_works_custom_fields() {
-    // デバッグメッセージを出力
-    // error_log('add_works_custom_fieldsが呼び出されました');
 
     add_meta_box(
         'works_custom_fields', // メタボックスID
@@ -464,8 +462,6 @@ add_action('add_meta_boxes', 'add_works_custom_fields');
  * カスタムフィールドの表示
  */
 function render_works_custom_fields($post) {
-    // デバッグメッセージを出力
-    // echo '<p>render_works_custom_fieldsが呼び出されました</p>';
 
     if (!$post) {
         return;
