@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makokamiya-wp-"
 "theme\n"
 "POT-Creation-Date: 2025-06-24T04:53:39+00:00\n"
-"PO-Revision-Date: 2025-06-24 14:43+0900\n"
+"PO-Revision-Date: 2025-06-30 11:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid ""
 "A custom WordPress theme developed by Mako Kamiya to showcase her web design "
 "and coding work."
-msgstr ""
+msgstr "かみやまこが開発したカスタムWordPressテーマ。"
 
 #. Author of the theme
 #: style.css
@@ -46,14 +46,14 @@ msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "ページが見つかりません。"
+msgstr "お探しのページが見つかりませんでした。"
 
 #: 404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"お探しのページは存在しないか、移動しました。以下のフォームから検索してみてく"
+"このページには何も見つかりませんでした。以下のリンクを試すか、検索をお試しく"
 "ださい。"
 
 #: 404.php:30
@@ -70,7 +70,7 @@ msgstr "月別アーカイブをご確認ください。%1$s"
 #: comments.php:35
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
+msgstr "&ldquo;%1$s&rdquoへのコメント："
 
 #. translators: 1: comment count number, 2: title.
 #: comments.php:41
@@ -78,11 +78,11 @@ msgstr ""
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
+msgstr[0] "「%2$s」に%1$s件のコメントがあります："
 
 #: comments.php:68
 msgid "Comments are closed."
-msgstr ""
+msgstr "コメントは受け付けていません。"
 
 #: functions.php:52
 msgid "Primary"
@@ -111,7 +111,7 @@ msgstr ""
 
 #: header.php:14
 msgid "Skip to content"
-msgstr ""
+msgstr "本文へスキップ"
 
 #. translators: %s: post date.
 #: inc/template-tags.php:30
@@ -166,7 +166,7 @@ msgstr "編集<span class=\"screen-reader-text\">%s</span>"
 #: search.php:21
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "「%s」の検索結果"
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: single-works.php:88 template-parts/content.php:40
@@ -176,15 +176,15 @@ msgstr "続きを読む<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: single.php:23
 msgid "Previous:"
-msgstr ""
+msgstr "前へ:"
 
 #: single.php:24
 msgid "Next:"
-msgstr ""
+msgstr "次へ:"
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
-msgstr "表示するコンテンツが見つかりませんでした"
+msgstr "見つかりませんでした"
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
@@ -192,19 +192,22 @@ msgstr "表示するコンテンツが見つかりませんでした"
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"初めての投稿をしてみませんか？<a href=\"%1$s\">こちらから始められます</a>."
+"初めての投稿を公開しましょう。<a href=\"%1$s\">こちらから始めてください。</"
+"a>."
 
 #: template-parts/content-none.php:37
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"申し訳ありませんが、検索条件に一致する結果はありませんでした。別のキーワード"
+"で再度お試しください。"
 
 #: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "お探しの情報が見つかりません。検索をお試しください。"
+msgstr "お探しの内容が見つかりませんでした。検索をお試しください。"
 
 #: template-parts/content-page.php:25 template-parts/content.php:53
 msgid "Pages:"
