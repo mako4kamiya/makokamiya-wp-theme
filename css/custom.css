@@ -395,6 +395,7 @@ a.url {
                                     .tags {
                                         display: flex;;
                                         gap: 4px;
+                                        flex-wrap: wrap;
                                         span.tag {
                                             color: var(--text-secondary-light);
                                             background-color: var(--bg-secondary-gray);
