@@ -26,4 +26,4 @@ jobs:
         --exclude='.git/' \
         --exclude='.github/workflows/deploy.yml' \
         ./ \
-        ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.THEME_PATH }}
+        ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.THEME_PATH }}
