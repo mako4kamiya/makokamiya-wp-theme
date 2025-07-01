@@ -633,3 +633,7 @@ function disable_author_archive() {
     }
 }
 add_action('template_redirect', 'disable_author_archive');
+
+add_action('admin_notices', function() {
+    echo '<div style="background:#fffbe6;padding:10px;border:1px solid #ffe58f;">get_template_directory_uri(): <strong>' . esc_html(get_template_directory_uri()) . '</strong></div>';
+});
