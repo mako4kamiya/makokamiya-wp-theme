@@ -12,7 +12,11 @@ jobs:
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v2
-    - run: echo "軽量な処理"
+    
+    - name: Show date and commit message
+      run: |
+        echo "Deploy Date: $(date)"
+        echo "Last Commit Message: ${{ github.event.head_commit.message }}"
     
     - name: Install SSH key
       uses: webfactory/ssh-agent@v0.5.0
