@@ -43,10 +43,12 @@
 	<?php endif; ?>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php if ( is_front_page() && is_home() ) : ?>
+			<?php if ( is_front_page() ) : ?>
 				<h1 class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></h1>
-			<?php else :?>
+			<?php elseif ( is_page() || is_single() ) : ?>
 				<p class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></p>
+			<?php else : ?>
+				<h1 class="site-title"><a id="HeaderLogo" href="<?php echo esc_url( home_url( '/' ) ); ?>">MAKO KAMIYA</a></h1>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
