@@ -338,6 +338,10 @@ function makokamiya_register_post_type_works() {
             'menu_icon' => 'dashicons-portfolio', // 管理画面メニューで使うアイコン（WordPress標準アイコン）
             'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ), // 投稿画面で使える機能（タイトル、本文、アイキャッチ画像、抜粋）
             'show_in_rest' => true, // ブロックエディタ（Gutenberg）やREST APIに対応
+			'rewrite' => array(
+				'slug' => 'portfolio/works', // ←ここが重要
+				'with_front' => false,
+			),
         )
     );
 }

@@ -2,7 +2,7 @@ let swiper;
 
 function initSwiper() {
     // 現在のURLが /works/ の場合、Swiperを初期化しない
-    if (window.location.pathname === '/works/') {
+    if (window.location.pathname === '/portfolio/works/') {
         return;
     }
 
