@@ -1,5 +1,6 @@
 <?php
-	$admin_user = get_user_by('login', 'makokamiyalocal');
+	$admins = get_users( array( 'role' => 'administrator', 'number' => 1 ) );
+	$admin_user = !empty($admins) ? $admins[0] : null;
 	$author_id = $admin_user->ID;
 	$translation_title = get_post_meta( get_the_ID(), 'translation_title', true );
 ?>
